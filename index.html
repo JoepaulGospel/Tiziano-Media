@@ -3,197 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TIZIANO | Global Media House</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>TIZIANO | Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-:root {
---bg: #000000;
---text: #ffffff;
---accent: #0066ff; /* Paramount Blue accent */
-}
+:root { --bg: #000; --text: #fff; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-font-family: 'Inter', sans-serif;
-background: var(--bg);
-color: var(--text);
-overflow-x: hidden;
-}
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
 .brand-font { font-family: 'Cinzel', serif; letter-spacing: 4px; }
-/* Paramount Style Nav */
 nav {
-padding: 20px 5%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-position: fixed;
-width: 100%;
-z-index: 1000;
-background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
-transition: 0.3s;
+padding: 25px 5%; display: flex; justify-content: space-between; align-items: center;
+position: fixed; width: 100%; z-index: 1000; background: linear-gradient(to bottom, #000, transparent);
 }
-.nav-logo { font-size: 1.5rem; text-decoration: none; color: white; font-weight: 900; }
-.nav-links { display: flex; gap: 40px; }
-.nav-links a {
-color: white;
-text-decoration: none;
-font-size: 0.75rem;
-font-weight: 700;
-letter-spacing: 1.5px;
-text-transform: uppercase;
-opacity: 0.7;
-}
+.nav-logo { font-size: 1.5rem; text-decoration: none; color: #fff; }
+.nav-links { display: flex; gap: 25px; }
+.nav-links a { color: #fff; text-decoration: none; font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.7; transition: 0.3s; }
 .nav-links a:hover { opacity: 1; }
-/* Immersive Hero Section */
 .hero {
-height: 100vh;
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-position: relative;
-text-align: center;
-/* Replace the URL below with your footage from 'The Gathering' */
-background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)),
-url('https://images.unsplash.com/photo-1492691523567-6170f229c411?auto=format&fit=crop&q=80&w=2070');
-background-size: cover;
-background-position: center;
+height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;
+background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1492691523567-6170f229c411?auto=format&fit=crop&q=80&w=2070');
+background-size: cover; background-position: center;
 }
-.hero-content h1 {
-font-size: clamp(4rem, 15vw, 10rem);
-line-height: 0.8;
-margin-bottom: 20px;
-}
-.hero-tagline {
-font-size: 1rem;
-letter-spacing: 5px;
-color: #ccc;
-text-transform: uppercase;
-}
-/* Paramount Content Tiles */
-.brand-section {
-padding: 100px 5%;
-background: #000;
-}
-.section-title {
-font-size: 0.8rem;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: #666;
-margin-bottom: 40px;
-display: block;
-}
-.grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-gap: 20px;
-}
-.tile {
-height: 500px;
-background: #111;
-position: relative;
-overflow: hidden;
-display: flex;
-align-items: flex-end;
-padding: 40px;
-text-decoration: none;
-color: white;
-transition: 0.5s transform cubic-bezier(0.2, 1, 0.3, 1);
-}
-.tile:hover { transform: scale(1.02); }
-.tile img {
-position: absolute;
-top: 0; left: 0; width: 100%; height: 100%;
-object-fit: cover;
-opacity: 0.6;
-transition: 0.5s;
-}
-.tile:hover img { opacity: 0.8; transform: scale(1.1); }
-.tile-content { position: relative; z-index: 2; }
-.tile h3 { font-size: 1.8rem; margin-bottom: 10px; }
-.tile p { font-size: 0.9rem; color: #ccc; letter-spacing: 1px; }
-/* Paramount Style Footer */
-footer {
-padding: 100px 5%;
-background: #000;
-border-top: 1px solid #222;
-text-align: center;
-}
-.footer-links {
-display: flex;
-justify-content: center;
-gap: 30px;
-margin-bottom: 50px;
-flex-wrap: wrap;
-}
-.footer-links a {
-color: #666;
-text-decoration: none;
-font-size: 0.8rem;
-font-weight: 600;
-}
-.footer-logo {
-font-size: 5rem;
-opacity: 0.1;
-margin-top: 40px;
-}
-@media (max-width: 768px) {
-.nav-links { display: none; }
-.hero-content h1 { font-size: 4rem; }
-}
+.hero h1 { font-size: clamp(4rem, 15vw, 10rem); line-height: 0.8; margin-bottom: 20px; }
 </style>
 </head>
 <body>
 <nav>
-<a href="index.html" class="nav-logo brand-font">TIZIANO</a>
+<a href="/home" class="nav-logo brand-font">TIZIANO</a>
 <div class="nav-links">
-<a href="roadmap.html">Roadmap</a>
-<a href="#work">Featured Work</a>
-<a href="mailto:contact@tiziano.com">Contact</a>
+<a href="/films">Films</a>
+<a href="/about">About</a>
+<a href="/investors">Investors</a>
+<a href="/roadmap">Roadmap</a>
+<a href="https://www.instagram.com/the_official_tiziano?igsh=YXk3Z25wNzF4ZjBq" target="_blank">Contact</a>
 </div>
 </nav>
 <div class="hero">
 <div class="hero-content">
 <h1 class="brand-font">TIZIANO</h1>
-<p class="hero-tagline">Entertainment & Content Solutions</p>
+<p style="letter-spacing: 5px; color: #888; text-transform: uppercase;">Entertainment & Content Solutions</p>
 </div>
 </div>
-<section class="brand-section" id="work">
-<span class="section-title">Our Ecosystem</span>
-<div class="grid">
-<!-- Tile 1 -->
-<a href="#" class="tile">
-<img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=2070" alt="Events">
-<div class="tile-content">
-<p>CORE SERVICE</p>
-<h3 class="brand-font">EVENT COVERAGE</h3>
-</div>
-</a>
-<!-- Tile 2 -->
-<a href="#" class="tile">
-<img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=2012" alt="Sourcing">
-<div class="tile-content">
-<p>AGENCY</p>
-<h3 class="brand-font">FULL SOURCING</h3>
-</div>
-</a>
-<!-- Tile 3 -->
-<a href="#" class="tile">
-<img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=2059" alt="Production">
-<div class="tile-content">
-<p>CINEMATIC</p>
-<h3 class="brand-font">PRODUCTION</h3>
-</div>
-</a>
-</div>
-</section>
-<footer>
-<div class="footer-links">
-<a href="roadmap.html">THE ROADMAP</a>
-<a href="deck.html">MANIFESTO</a>
-<a href="mailto:contact@tiziano.com">GET IN TOUCH</a>
-</div>
-<p style="color: #444; font-size: 0.7rem; letter-spacing: 2px;">© 2025 TIZIANO GLOBAL MEDIA. INSPIRED BY LEGACY.</p>
-<div class="footer-logo brand-font">TIZIANO</div>
-</footer>
 </body>
 </html>
