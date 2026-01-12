@@ -3,27 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TIZIANO | The Future of Creative Infrastructure</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+<title>TIZIANO | The Roadmap</title>
+<!-- Importing Cinzel for Logo and Inter for Body -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
 --bg: #0a0a0a;
---bg-offset: #111111;
 --text: #ffffff;
 --accent: #a0a0a0;
 --border: rgba(255, 255, 255, 0.1);
---transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-font-family: 'Inter', sans-serif;
-background: var(--bg);
-color: var(--text);
-line-height: 1.6;
-overflow-x: hidden;
-}
-/* Navigation */
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+/* Font Styling */
+.brand-font { font-family: 'Cinzel', serif; letter-spacing: 4px; }
 nav {
 padding: 30px 5%;
 display: flex;
@@ -32,22 +25,10 @@ align-items: center;
 position: fixed;
 width: 100%;
 z-index: 1000;
-background: linear-gradient(to bottom, rgba(10,10,10,0.9), transparent);
+background: rgba(10,10,10,0.8);
 backdrop-filter: blur(10px);
 }
-.nav-logo { font-weight: 900; letter-spacing: 4px; font-size: 1.2rem; }
-.nav-links a {
-color: var(--text);
-text-decoration: none;
-margin-left: 30px;
-font-size: 0.8rem;
-text-transform: uppercase;
-letter-spacing: 2px;
-opacity: 0.7;
-transition: var(--transition);
-}
-.nav-links a:hover { opacity: 1; }
-/* Hero Section */
+.nav-logo { font-size: 1.2rem; }
 header {
 height: 100vh;
 display: flex;
@@ -55,183 +36,80 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
-padding: 0 10%;
-position: relative;
 background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
 }
-.hero-label {
-font-size: 0.8rem;
-letter-spacing: 5px;
-text-transform: uppercase;
-color: var(--accent);
-margin-bottom: 20px;
-}
-header h1 {
-font-size: clamp(3.5rem, 12vw, 9rem);
-font-weight: 900;
-letter-spacing: -3px;
-line-height: 0.9;
-margin-bottom: 30px;
-background: linear-gradient(180deg, #fff 30%, #444 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-}
-header p { font-size: 1.1rem; color: var(--accent); max-width: 500px; margin-bottom: 40px; font-weight: 300; }
-.cta-main {
-padding: 18px 45px;
-background: white;
-color: black;
-text-decoration: none;
-font-weight: 700;
-border-radius: 2px;
-transition: var(--transition);
-text-transform: uppercase;
-letter-spacing: 1px;
-}
-.cta-main:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(255,255,255,0.1); }
-/* General Section Styling */
-section { padding: 140px 10%; }
-.section-tag { color: var(--accent); text-transform: uppercase; letter-spacing: 4px; font-size: 0.7rem; margin-bottom: 20px; display: block; }
-h2 { font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 60px; font-weight: 800; letter-spacing: -1px; }
-/* Services Grid */
-.grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 20px;
-}
-.card {
-background: var(--bg-offset);
-border: 1px solid var(--border);
-padding: 50px;
-transition: var(--transition);
-}
-.card:hover { border-color: #444; background: #151515; }
-.card h3 { font-size: 1.4rem; margin-bottom: 20px; letter-spacing: 1px; }
-.card p { color: var(--accent); font-size: 0.95rem; line-height: 1.8; }
-/* Blueprint Section (The New Milestone Area) */
-.blueprint-container {
+header h1 { font-size: clamp(3rem, 10vw, 8rem); margin-bottom: 20px; }
+section { padding: 100px 10%; }
+h2 { font-size: 3rem; margin-bottom: 40px; text-align: center; }
+/* The Roadmap Section */
+.roadmap-container {
 background: #000;
 border: 1px solid var(--border);
-padding: 80px 50px;
+padding: 80px 40px;
 text-align: center;
-position: relative;
-overflow: hidden;
 }
-.milestone-row {
+.milestone-grid {
 display: flex;
 justify-content: space-around;
 flex-wrap: wrap;
+gap: 40px;
 margin: 60px 0;
-gap: 30px;
 }
-.milestone {
-flex: 1;
-min-width: 200px;
-}
-.milestone-num {
-display: block;
-font-size: 3rem;
-font-weight: 900;
-color: #fff;
-margin-bottom: 5px;
-}
-.milestone-label {
-font-size: 0.7rem;
-text-transform: uppercase;
-letter-spacing: 2px;
-color: #555;
-}
-.milestone-desc {
-font-size: 0.9rem;
-color: var(--accent);
-margin-top: 10px;
-}
-.cta-secondary {
+.milestone { flex: 1; min-width: 250px; }
+.milestone-num { font-size: 3.5rem; font-weight: 800; display: block; }
+.milestone-label { color: #555; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
+.milestone-desc { color: var(--accent); margin-top: 10px; font-size: 0.9rem; }
+.cta {
 display: inline-block;
-padding: 15px 35px;
+padding: 15px 40px;
 border: 1px solid #fff;
 color: #fff;
 text-decoration: none;
-font-weight: 600;
-transition: var(--transition);
-margin-top: 20px;
+font-weight: 700;
+transition: 0.3s;
 }
-.cta-secondary:hover { background: #fff; color: #000; }
-/* Footer */
-footer {
-padding: 100px 10%;
-border-top: 1px solid var(--border);
-text-align: center;
-}
-.footer-logo { font-size: clamp(3rem, 15vw, 10rem); font-weight: 900; opacity: 0.03; letter-spacing: 10px; }
-.copyright { color: #444; font-size: 0.8rem; margin-top: 20px; }
-@media (max-width: 768px) {
-section { padding: 80px 5%; }
-.blueprint-container { padding: 40px 20px; }
-}
+.cta:hover { background: #fff; color: #000; }
+footer { padding: 100px 10%; text-align: center; border-top: 1px solid var(--border); }
+.footer-logo { font-size: 5rem; opacity: 0.05; }
 </style>
 </head>
 <body>
 <nav>
-<div class="nav-logo">TIZIANO</div>
-<div class="nav-links">
-<a href="#services">Services</a>
-<a href="#vision">Manifesto</a>
-<a href="mailto:contact@tiziano.com">Contact</a>
+<div class="nav-logo brand-font">TIZIANO</div>
+<div style="font-size: 0.8rem; letter-spacing: 2px;">
+<a href="mailto:contact@tiziano.com" style="color:white; text-decoration:none;">CONTACT</a>
 </div>
 </nav>
 <header>
-<span class="hero-label">Lagos // Nigeria</span>
-<h1>TIZIANO</h1>
-<p>A unified media house for the next generation of global fashion and lifestyle brands.</p>
-<a href="mailto:contact@tiziano.com" class="cta-main">Initiate Protocol</a>
+<h1 class="brand-font">TIZIANO</h1>
+<p style="color: #888; letter-spacing: 2px;">ALL-IN-ONE CREATIVE MEDIA HOUSE</p>
 </header>
-<section id="services">
-<span class="section-tag">Capabilities</span>
-<h2>Integrated Excellence.</h2>
-<div class="grid">
-<div class="card">
-<h3>Event Coverage</h3>
-<p>High-fidelity cinematic capture for brand launches, runways, and exclusive activations.</p>
-</div>
-<div class="card">
-<h3>Sourcing & Talent</h3>
-<p>Eliminating fragmentation. We provide the models, the crew, and the equipment in one seamless motion.</p>
-</div>
-<div class="card">
-<h3>Cinematography</h3>
-<p>World-class production standards designed to elevate African narratives to global platforms.</p>
-</div>
-</div>
-</section>
-<section id="vision">
-<div class="blueprint-container">
-<span class="section-tag">Strategic Roadmap</span>
-<h2>The Paramount Path.</h2>
-<p style="max-width: 700px; margin: 0 auto; color: var(--accent);">Tiziano is not just a service provider; we are the foundation of a future media empire. From boutique sourcing to global distribution.</p>
-<div class="milestone-row">
+<section id="roadmap">
+<div class="roadmap-container">
+<h2 class="brand-font">The Roadmap</h2>
+<div class="milestone-grid">
 <div class="milestone">
 <span class="milestone-num">05</span>
-<span class="milestone-label">Core Elite</span>
-<p class="milestone-desc">Unified creative experts driving the current mission.</p>
+<span class="milestone-label">Current Crew</span>
+<p class="milestone-desc">A specialized elite team of young creatives driving the mission.</p>
 </div>
 <div class="milestone">
 <span class="milestone-num">2025</span>
-<span class="milestone-label">Sourcing Leader</span>
-<p class="milestone-desc">Targeted dominance of the Nigerian fashion ecosystem.</p>
+<span class="milestone-label">Market Dominance</span>
+<p class="milestone-desc">Becoming Nigeria's premier sourcing and coverage agency.</p>
 </div>
 <div class="milestone">
-<span class="milestone-num">IP</span>
-<span class="milestone-label">Original Content</span>
-<p class="milestone-desc">Transitioning from service to ownership of the narrative.</p>
+<span class="milestone-num">Global</span>
+<span class="milestone-label">The Vision</span>
+<p class="milestone-desc">Scaling to a world-class distribution powerhouse (Paramount Scale).</p>
 </div>
 </div>
-<a href="deck.html" class="cta-secondary">VIEW THE MANIFESTO</a>
+<!-- Link to the Pitch Deck -->
+<a href="deck.html" class="cta">OPEN THE MANIFESTO</a>
 </div>
 </section>
 <footer>
-<div class="footer-logo">TIZIANO</div>
-<p class="copyright">© 2025 TIZIANO MEDIA HOUSE. ALL RIGHTS RESERVED. <br> ENGINEERED FOR WORLD-CLASS STANDARDS.</p>
+<div class="footer-logo brand-font">TIZIANO</div>
 </footer>
 </body>
 </html>
