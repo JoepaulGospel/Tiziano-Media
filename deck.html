@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiziano Manifesto</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; overflow-x: hidden; }
+.deck-container { height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; }
+.slide {
+height: 100vh; width: 100%;
+display: flex; flex-direction: column; justify-content: center; align-items: center;
+scroll-snap-align: start; padding: 40px; position: relative;
+}
+.back-btn {
+position: fixed; top: 30px; left: 30px; z-index: 100;
+color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px;
+border: 1px solid rgba(255,255,255,0.2); padding: 10px 20px;
+}
+.back-btn:hover { background: #fff; color: #000; }
+.logo { font-family: 'Cinzel', serif; font-size: 5rem; letter-spacing: 8px; margin-bottom: 20px; }
+h1 { font-size: 4rem; text-align: center; margin-bottom: 30px; }
+p { max-width: 800px; text-align: center; font-size: 1.2rem; color: #aaa; line-height: 1.6; }
+.highlight { color: #fff; font-weight: 800; }
+/* Slide Colors */
+.cover { background: #000; }
+.problem { background: #0d0d0d; }
+.vision { background: #111; }
+</style>
+</head>
+<body>
+<a href="index.html" class="back-btn">← EXIT MANIFESTO</a>
+<div class="deck-container">
+<!-- Slide 1 -->
+<div class="slide cover">
+<div class="logo">TIZIANO</div>
+<p>The Blueprint for World-Class Media</p>
+</div>
+<!-- Slide 2 -->
+<div class="slide problem">
+<h1>The Problem</h1>
+<p>Brands are drowning in <span class="highlight">fragmented vendors</span>. High costs, inconsistent quality, and logistical nightmares in the Nigerian market.</p>
+</div>
+<!-- Slide 3 -->
+<div class="slide vision">
+<h1>The Solution</h1>
+<p>An <span class="highlight">All-in-One Media House</span>. We provide the talent, the tech, and the story—unified under one roof.</p>
+</div>
+</div>
+</body>
+</html>
