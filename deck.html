@@ -3,51 +3,412 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tiziano Manifesto</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;800&display=swap" rel="stylesheet">
+<title>Tiziano Pitch Deck</title>
+<!-- Adding Cinzel and Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; overflow-x: hidden; }
-.deck-container { height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; }
+/* Your original styles start here */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+background: #0a0a0a;
+color: #ffffff;
+overflow-x: hidden;
+}
+.deck-container {
+width: 100%;
+height: 100vh;
+overflow-y: scroll;
+scroll-snap-type: y mandatory;
+scroll-behavior: smooth;
+}
 .slide {
-height: 100vh; width: 100%;
-display: flex; flex-direction: column; justify-content: center; align-items: center;
-scroll-snap-align: start; padding: 40px; position: relative;
+width: 100%;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 60px 40px;
+scroll-snap-align: start;
+position: relative;
 }
-.back-btn {
-position: fixed; top: 30px; left: 30px; z-index: 100;
-color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px;
-border: 1px solid rgba(255,255,255,0.2); padding: 10px 20px;
+/* UPDATED LOGO WITH CINZEL */
+.logo {
+font-family: 'Cinzel', serif;
+font-size: 72px;
+font-weight: 900;
+letter-spacing: 8px;
+margin-bottom: 30px;
+background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
 }
-.back-btn:hover { background: #fff; color: #000; }
-.logo { font-family: 'Cinzel', serif; font-size: 5rem; letter-spacing: 8px; margin-bottom: 20px; }
-h1 { font-size: 4rem; text-align: center; margin-bottom: 30px; }
-p { max-width: 800px; text-align: center; font-size: 1.2rem; color: #aaa; line-height: 1.6; }
-.highlight { color: #fff; font-weight: 800; }
-/* Slide Colors */
-.cover { background: #000; }
-.problem { background: #0d0d0d; }
-.vision { background: #111; }
+/* NEW BACK BUTTON */
+.home-nav {
+position: fixed; top: 20px; left: 20px; z-index: 2000;
+color: white; text-decoration: none; font-size: 0.7rem;
+letter-spacing: 2px; border: 1px solid rgba(255,255,255,0.2);
+padding: 10px 15px; background: rgba(0,0,0,0.5);
+}
+/* REST OF YOUR ORIGINAL STYLES */
+.slide::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+pointer-events: none;
+}
+.cover {
+background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+.subtitle {
+font-size: 24px;
+color: #888;
+font-weight: 300;
+text-align: center;
+max-width: 600px;
+}
+.slide-number {
+position: absolute;
+top: 30px;
+right: 40px;
+font-size: 14px;
+color: #555;
+}
+h1 {
+font-size: 56px;
+font-weight: 800;
+margin-bottom: 40px;
+text-align: center;
+line-height: 1.2;
+}
+h2 {
+font-size: 36px;
+font-weight: 700;
+margin-bottom: 30px;
+color: #ffffff;
+}
+.content {
+max-width: 900px;
+width: 100%;
+}
+p {
+font-size: 20px;
+line-height: 1.8;
+color: #cccccc;
+margin-bottom: 20px;
+}
+.highlight {
+color: #ffffff;
+font-weight: 600;
+}
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 30px;
+margin-top: 40px;
+}
+.service-card {
+background: rgba(255, 255, 255, 0.03);
+border: 1px solid rgba(255, 255, 255, 0.1);
+padding: 40px 30px;
+border-radius: 12px;
+transition: all 0.3s ease;
+}
+.service-card:hover {
+background: rgba(255, 255, 255, 0.05);
+border-color: rgba(255, 255, 255, 0.2);
+transform: translateY(-5px);
+}
+.service-card h3 {
+font-size: 24px;
+margin-bottom: 15px;
+color: #ffffff;
+}
+.service-card p {
+font-size: 16px;
+color: #aaa;
+}
+.features {
+list-style: none;
+margin-top: 30px;
+}
+.features li {
+font-size: 20px;
+color: #cccccc;
+margin-bottom: 20px;
+padding-left: 30px;
+position: relative;
+}
+.features li::before {
+content: '→';
+position: absolute;
+left: 0;
+color: #888;
+}
+.stats {
+display: flex;
+justify-content: space-around;
+margin-top: 50px;
+flex-wrap: wrap;
+gap: 40px;
+}
+.stat {
+text-align: center;
+}
+.stat-number {
+font-size: 48px;
+font-weight: 800;
+color: #ffffff;
+margin-bottom: 10px;
+}
+.stat-label {
+font-size: 16px;
+color: #888;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+.project-box {
+background: rgba(255, 255, 255, 0.03);
+border: 1px solid rgba(255, 255, 255, 0.1);
+padding: 50px;
+border-radius: 12px;
+margin-top: 40px;
+text-align: center;
+}
+.project-box h3 {
+font-size: 32px;
+margin-bottom: 20px;
+color: #ffffff;
+}
+.project-box p {
+font-size: 18px;
+color: #aaa;
+}
+.team-info {
+background: rgba(255, 255, 255, 0.03);
+border: 1px solid rgba(255, 255, 255, 0.1);
+padding: 40px;
+border-radius: 12px;
+margin-top: 30px;
+}
+.cta {
+margin-top: 50px;
+text-align: center;
+}
+.cta-button {
+display: inline-block;
+padding: 18px 50px;
+background: #ffffff;
+color: #0a0a0a;
+font-size: 18px;
+font-weight: 700;
+border-radius: 8px;
+text-decoration: none;
+transition: all 0.3s ease;
+}
+.cta-button:hover {
+background: #e0e0e0;
+transform: scale(1.05);
+}
+.nav-dots {
+position: fixed;
+right: 30px;
+top: 50%;
+transform: translateY(-50%);
+z-index: 100;
+}
+.nav-dot {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background: rgba(255, 255, 255, 0.3);
+margin: 15px 0;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+.nav-dot:hover {
+background: rgba(255, 255, 255, 0.6);
+transform: scale(1.3);
+}
+@media (max-width: 768px) {
+.logo { font-size: 48px; }
+h1 { font-size: 36px; }
+h2 { font-size: 28px; }
+p, .features li { font-size: 18px; }
+.slide { padding: 40px 20px; }
+.services-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
-<a href="index.html" class="back-btn">← EXIT MANIFESTO</a>
-<div class="deck-container">
-<!-- Slide 1 -->
+<!-- Back Button -->
+<a href="roadmap.html" class="home-nav">← BACK TO ROADMAP</a>
+<div class="deck-container" id="deck">
+<!-- Slide 1: Cover -->
 <div class="slide cover">
 <div class="logo">TIZIANO</div>
-<p>The Blueprint for World-Class Media</p>
+<div class="subtitle">Your All-in-One Creative Media Partner</div>
 </div>
-<!-- Slide 2 -->
-<div class="slide problem">
+<!-- Slide 2: The Problem -->
+<div class="slide">
+<div class="slide-number">02</div>
+<div class="content">
 <h1>The Problem</h1>
-<p>Brands are drowning in <span class="highlight">fragmented vendors</span>. High costs, inconsistent quality, and logistical nightmares in the Nigerian market.</p>
-</div>
-<!-- Slide 3 -->
-<div class="slide vision">
-<h1>The Solution</h1>
-<p>An <span class="highlight">All-in-One Media House</span>. We provide the talent, the tech, and the story—unified under one roof.</p>
+<p>Brands today face a frustrating challenge when planning events and creating content.</p>
+<p class="highlight">They have to coordinate with multiple vendors—event coverage teams, sourcing agencies for models and crew, equipment rentals, and production companies.</p>
+<p>This fragmented approach leads to inconsistent quality, wasted time, budget overruns, and missed opportunities to create truly world-class brand moments.</p>
 </div>
 </div>
+<!-- Slide 3: The Solution -->
+<div class="slide">
+<div class="slide-number">03</div>
+<div class="content">
+<h1>Meet Tiziano</h1>
+<p class="highlight" style="font-size: 24px; margin-bottom: 30px;">The all-in-one media house that brings everything under one roof.</p>
+<p>We eliminate the hassle of working with multiple vendors by providing comprehensive creative services—from event coverage and sourcing to cinematic production.</p>
+<p>One partner. One vision. World-class results.</p>
+</div>
+</div>
+<!-- Slide 4: What We Do -->
+<div class="slide">
+<div class="slide-number">04</div>
+<div class="content">
+<h1>What We Do</h1>
+<div class="services-grid">
+<div class="service-card">
+<h3>Event Coverage</h3>
+<p>Professional cinematic coverage of your brand events, launches, and activations with world-class production quality.</p>
+</div>
+<div class="service-card">
+<h3>Full Sourcing</h3>
+<p>We provide everything you need—models, crew, cameras, equipment, and talent—all coordinated seamlessly.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 5: Why Tiziano -->
+<div class="slide">
+<div class="slide-number">05</div>
+<div class="content">
+<h1>Why Tiziano?</h1>
+<ul class="features">
+<li><span class="highlight">All-in-One Solution:</span> We're not scattered like our competitors. Everything you need is unified under one creative roof.</li>
+<li><span class="highlight">Cinematic Quality:</span> We don't just capture moments—we create visual stories that elevate your brand.</li>
+<li><span class="highlight">Efficiency & Simplicity:</span> One point of contact. One cohesive vision. No coordination headaches.</li>
+<li><span class="highlight">Growing with Nigeria's Fashion Scene:</span> We understand the pulse of Nigeria's rapidly growing fashion and lifestyle market.</li>
+</ul>
+</div>
+</div>
+<!-- Slide 6: Our Work -->
+<div class="slide">
+<div class="slide-number">06</div>
+<div class="content">
+<h1>Our Work</h1>
+<div class="project-box">
+<h3>The Gathering by Marvels Diary</h3>
+<p>A cinematic showcase of our capabilities—demonstrating our ability to deliver world-class event coverage and production quality that makes brands stand out.</p>
+</div>
+<p style="text-align: center; margin-top: 30px; color: #888;">[Portfolio visuals to be added]</p>
+</div>
+</div>
+<!-- Slide 7: Target Market -->
+<div class="slide">
+<div class="slide-number">07</div>
+<div class="content">
+<h1>Our Market</h1>
+<p class="highlight" style="font-size: 24px;">Fashion and lifestyle brands in Nigeria's booming creative economy.</p>
+<p>Nigeria's fashion industry is experiencing explosive growth, with brands increasingly competing on a global stage. These brands need creative partners who can help them look world-class.</p>
+<p>That's where Tiziano comes in—bridging the gap between local ambition and international standards.</p>
+</div>
+</div>
+<!-- Slide 8: Vision -->
+<div class="slide">
+<div class="slide-number">08</div>
+<div class="content">
+<h1>Our Vision</h1>
+<p class="highlight" style="font-size: 28px; margin-bottom: 30px;">To become Nigeria's biggest sourcing agency and event coverage media house.</p>
+<p>We're building the premier creative partner for brands that refuse to settle for ordinary. Our mission is simple: help brands look world-class, tell their stories cinematically, and create moments that matter.</p>
+<p>Starting locally in Nigeria, scaling internationally.</p>
+</div>
+</div>
+<!-- Slide 9: The Team -->
+<div class="slide">
+<div class="slide-number">09</div>
+<div class="content">
+<h1>The Team</h1>
+<div class="team-info">
+<p class="highlight" style="font-size: 22px; margin-bottom: 20px;">A crew of 5 hungry young creatives.</p>
+<p>Led by our CEO & Creative Director, our team brings together expertise in cinematography, editing, graphics, and production—all driven by a shared passion to create interesting moments and elevate Nigerian brands to the world stage.</p>
+</div>
+<div class="stats">
+<div class="stat">
+<div class="stat-number">3</div>
+<div class="stat-label">Months Operating</div>
+</div>
+<div class="stat">
+<div class="stat-number">5</div>
+<div class="stat-label">Team Members</div>
+</div>
+<div class="stat">
+<div class="stat-number">100%</div>
+<div class="stat-label">Committed</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 10: Contact -->
+<div class="slide">
+<div class="slide-number">10</div>
+<div class="content" style="text-align: center;">
+<h1>Let's Create Something World-Class</h1>
+<p>Ready to elevate your brand with cinematic storytelling and seamless production?</p>
+<div class="cta">
+<a href="mailto:contact@tiziano.com" class="cta-button">Get In Touch</a>
+</div>
+<p style="margin-top: 40px; font-size: 18px; color: #888;">Tiziano Media House<br>Lagos, Nigeria</p>
+</div>
+</div>
+</div>
+<div class="nav-dots">
+<div class="nav-dot" onclick="scrollToSlide(0)"></div>
+<div class="nav-dot" onclick="scrollToSlide(1)"></div>
+<div class="nav-dot" onclick="scrollToSlide(2)"></div>
+<div class="nav-dot" onclick="scrollToSlide(3)"></div>
+<div class="nav-dot" onclick="scrollToSlide(4)"></div>
+<div class="nav-dot" onclick="scrollToSlide(5)"></div>
+<div class="nav-dot" onclick="scrollToSlide(6)"></div>
+<div class="nav-dot" onclick="scrollToSlide(7)"></div>
+<div class="nav-dot" onclick="scrollToSlide(8)"></div>
+<div class="nav-dot" onclick="scrollToSlide(9)"></div>
+</div>
+<script>
+function scrollToSlide(index) {
+const slides = document.querySelectorAll('.slide');
+slides[index].scrollIntoView({ behavior: 'smooth' });
+}
+document.addEventListener('keydown', (e) => {
+const slides = document.querySelectorAll('.slide');
+const currentScroll = window.scrollY;
+let currentSlide = 0;
+slides.forEach((slide, index) => {
+if (slide.offsetTop <= currentScroll + 100) { currentSlide = index; }
+});
+if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+if (currentSlide < slides.length - 1) { scrollToSlide(currentSlide + 1); }
+} else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+if (currentSlide > 0) { scrollToSlide(currentSlide - 1); }
+}
+});
+</script>
 </body>
 </html>
