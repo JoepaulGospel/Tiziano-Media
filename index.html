@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TIZIANO | All-in-One Creative Media House</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+--bg: #0a0a0a;
+--text: #ffffff;
+--accent: #a0a0a0;
+--card-bg: rgba(255, 255, 255, 0.03);
+--border: rgba(255, 255, 255, 0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: 'Inter', sans-serif;
+background: var(--bg);
+color: var(--text);
+line-height: 1.6;
+overflow-x: hidden;
+}
+/* Navigation */
+nav {
+padding: 30px 5%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: fixed;
+width: 100%;
+z-index: 1000;
+background: linear-gradient(to bottom, rgba(10,10,10,1), transparent);
+}
+.nav-logo { font-weight: 900; letter-spacing: 3px; font-size: 1.5rem; }
+.nav-links a { color: var(--text); text-decoration: none; margin-left: 30px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+/* Hero Section */
+header {
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 0 10%;
+position: relative;
+}
+header h1 {
+font-size: clamp(3rem, 10vw, 8rem);
+font-weight: 900;
+letter-spacing: -2px;
+margin-bottom: 20px;
+background: linear-gradient(180deg, #fff 0%, #444 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+header p { font-size: 1.2rem; color: var(--accent); max-width: 600px; margin-bottom: 40px; }
+.cta-main {
+padding: 15px 40px;
+background: white;
+color: black;
+text-decoration: none;
+font-weight: 700;
+border-radius: 4px;
+transition: 0.3s;
+}
+.cta-main:hover { transform: scale(1.05); background: #ddd; }
+/* Services Section */
+section { padding: 100px 10%; }
+.section-label { color: var(--accent); text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; margin-bottom: 20px; display: block; }
+h2 { font-size: 3rem; margin-bottom: 50px; }
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+}
+.card {
+background: var(--card-bg);
+border: 1px solid var(--border);
+padding: 40px;
+border-radius: 8px;
+transition: 0.3s;
+}
+.card:hover { border-color: rgba(255,255,255,0.4); }
+.card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+.card p { color: var(--accent); }
+/* Portfolio Preview */
+.work-box {
+width: 100%;
+height: 500px;
+background: #151515;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid var(--border);
+margin-top: 50px;
+position: relative;
+overflow: hidden;
+}
+.work-box:after {
+content: "The Gathering by Marvels Diary";
+position: absolute;
+bottom: 30px;
+left: 30px;
+font-size: 1.2rem;
+font-weight: 700;
+}
+/* Footer */
+footer {
+padding: 100px 10% 50px;
+border-top: 1px solid var(--border);
+text-align: center;
+}
+.footer-logo { font-size: 4rem; font-weight: 900; opacity: 0.1; margin-bottom: 20px; }
+@media (max-width: 768px) {
+header h1 { font-size: 4rem; }
+h2 { font-size: 2rem; }
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-logo">TIZIANO</div>
+<div class="nav-links">
+<a href="#work">Work</a>
+<a href="#services">Services</a>
+<a href="mailto:contact@tiziano.com">Contact</a>
+</div>
+</nav>
+<header>
+<span class="section-label">Lagos, Nigeria</span>
+<h1>TIZIANO</h1>
+<p>The all-in-one creative media house. We don't just capture moments; we build the vision.</p>
+<a href="mailto:contact@tiziano.com" class="cta-main">Start a Project</a>
+</header>
+<section id="services">
+<span class="section-label">Capabilities</span>
+<h2>What we do.</h2>
+<div class="grid">
+<div class="card">
+<h3>Event Coverage</h3>
+<p>Cinematic production for high-stakes brand activations and fashion showcases.</p>
+</div>
+<div class="card">
+<h3>Full Sourcing</h3>
+<p>Models, crew, and high-end equipment—unified under one vision.</p>
+</div>
+<div class="card">
+<h3>Production</h3>
+<p>From concept to color grade, we deliver world-class digital assets.</p>
+</div>
+</div>
+</section>
+<section id="work">
+<span class="section-label">Selected Work</span>
+<h2>Cinematic Stories.</h2>
+<div class="work-box">
+<!-- Replace with actual video or image later -->
+<p style="color: #444;">[Portfolio Video Loop Placeholder]</p>
+</div>
+</section>
+<footer>
+<div class="footer-logo">TIZIANO</div>
+<p>© 2025 Tiziano Media House. Elevating Nigerian Fashion to the World Stage.</p>
+</footer>
+</body>
+</html>
