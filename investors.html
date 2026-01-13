@@ -3,79 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TIZIANO | Investors</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+<title>TIZIANO | Investor Manifesto</title>
+<!-- Brand Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; overflow-x: hidden; }
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Inter', sans-serif;
+background: #0a0a0a;
+color: #ffffff;
+overflow-x: hidden;
+}
 .brand-font { font-family: 'Cinzel', serif; letter-spacing: 4px; }
-nav { padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); z-index: 1000; }
-.nav-logo { font-size: 1.4rem; text-decoration: none; color: white; }
+/* Unified Navigation */
+nav {
+padding: 25px 5%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: fixed;
+width: 100%;
+z-index: 2000;
+background: rgba(0,0,0,0.85);
+backdrop-filter: blur(10px);
+}
+.nav-logo { font-size: 1.4rem; text-decoration: none; color: white; font-weight: 900; }
 .nav-links { display: flex; gap: 25px; }
-.nav-links a { color: white; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; opacity: 0.7; }
-.deck-container { width: 100%; height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; }
-.slide { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; scroll-snap-align: start; padding: 40px; text-align: center; }
-h1 { font-family: 'Cinzel', serif; font-size: 3.5rem; margin-bottom: 20px; }
-.deal-box { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px; margin-top: 30px; width: 100%; max-width: 600px; }
-.deal-item { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-.fund-tracker { width: 100%; max-width: 600px; margin-top: 50px; }
-.bar-bg { width: 100%; height: 12px; background: #222; margin: 25px 0; border-radius: 6px; overflow: hidden; }
-.bar-fill { height: 100%; background: #fff; width: 0%; transition: 1.5s; }
-.cta-btn { padding: 18px 50px; background: #fff; color: #000; text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
+.nav-links a {
+color: white;
+text-decoration: none;
+font-size: 0.7rem;
+font-weight: 700;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+opacity: 0.7;
+transition: 0.3s;
+}
+.nav-links a:hover { opacity: 1; }
+.deck-container {
+width: 100%;
+height: 100vh;
+overflow-y: scroll;
+scroll-snap-type: y mandatory;
+scroll-behavior: smooth;
+}
+.slide {
+width: 100%;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 100px 40px 60px;
+scroll-snap-align: start;
+position: relative;
+}
+.slide::before {
+content: '';
+position: absolute;
+top: 0; left: 0; right: 0; bottom: 0;
+background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+pointer-events: none;
+}
+.cover { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); }
+.logo-main {
+font-family: 'Cinzel', serif;
+font-size: clamp(3rem, 10vw, 5rem);
+font-weight: 900;
+letter-spacing: 8px;
+margin-bottom: 20px;
+background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.subtitle { font-size: 28px; color: #fff; font-weight: 600; text-align: center; margin-bottom: 10px; }
+.tagline { font-size: 18px; color: #888; font-weight: 300; letter-spacing: 2px; }
+h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 40px; text-align: center; }
+.content { max-width: 900px; width: 100%; }
+p { font-size: 20px; line-height: 1.8; color: #cccccc; margin-bottom: 20px; }
+.highlight { color: #ffffff; font-weight: 600; }
+.stats { display: flex; justify-content: space-around; margin-top: 50px; flex-wrap: wrap; gap: 40px; }
+.stat-number { font-size: 48px; font-weight: 800; color: #ffffff; margin-bottom: 10px; }
+.stat-label { font-size: 16px; color: #888; text-transform: uppercase; letter-spacing: 2px; }
+.deal-box { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); padding: 40px; border-radius: 4px; margin-top: 30px; }
+.deal-item { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+.deal-value { color: #fff; font-weight: 600; }
+/* Progress Bar Styles */
+.fundraise-container { width: 100%; max-width: 700px; margin-top: 40px; }
+.amount-raised { font-size: 48px; font-weight: 800; color: #fff; }
+.progress-bar-container { width: 100%; height: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; overflow: hidden; position: relative; margin: 20px 0; }
+.progress-bar { height: 100%; background: #fff; transition: width 1s ease; position: relative; }
+.timeline-item { display: flex; gap: 30px; margin-bottom: 30px; text-align: left; }
+.timeline-year { font-size: 32px; font-weight: 800; color: #fff; min-width: 120px; }
+.cta-button {
+display: inline-block; padding: 18px 50px; background: #fff; color: #000;
+font-size: 16px; font-weight: 800; text-decoration: none; transition: 0.3s;
+text-transform: uppercase; letter-spacing: 2px;
+}
+.cta-button:hover { transform: scale(1.05); }
+.nav-dots { position: fixed; right: 30px; top: 50%; transform: translateY(-50%); z-index: 100; }
+.nav-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); margin: 15px 0; cursor: pointer; }
+@media (max-width: 768px) {
+.nav-links { display: none; }
+h1 { font-size: 2rem; }
+}
 </style>
 </head>
 <body>
 <nav>
-<a href="/" class="nav-logo brand-font">TIZIANO</a>
-<div class="nav-links"><a href="/">Home</a><a href="/about">About Us</a><a href="/investors">Investors</a></div>
+<a href="/home" class="nav-logo brand-font">TIZIANO</a>
+<div class="nav-links">
+<a href="/home">Home</a>
+<a href="/about">About Us</a>
+<a href="/portfolio">Portfolio</a>
+<a href="/films">Films</a>
+<a href="/roadmap">Roadmap</a>
+<a href="/investors">Investors</a>
+<a href="https://www.instagram.com/the_official_tiziano" target="_blank">Contact</a>
+</div>
 </nav>
-<div class="deck-container">
+<div class="deck-container" id="deck">
 <!-- Slide 1: Cover -->
-<div class="slide" style="background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);">
-<div class="brand-font" style="font-size: 5rem;">TIZIANO</div>
-<p style="letter-spacing: 10px; color: #555; text-transform: uppercase;">Investor Opportunity</p>
+<div class="slide cover">
+<div class="logo-main brand-font">TIZIANO</div>
+<div class="subtitle">Investment Opportunity</div>
+<div class="tagline">Building Nigeria's Premier All-in-One Media House</div>
 </div>
-<!-- Slide 2: The Deal -->
+<!-- Slide 2: Opportunity -->
 <div class="slide">
-<h1>THE DEAL</h1>
+<h1>The Opportunity</h1>
+<div class="content">
+<p class="highlight" style="font-size: 24px;">Nigeria's fashion and lifestyle brands are booming—but they're struggling with fragmented, inconsistent creative services.</p>
+<p>Tiziano is the all-in-one solution: event coverage, full sourcing, and cinematic production—all under one roof.</p>
+<p>We're three months in, already delivered our first portfolio project, and ready to scale.</p>
+</div>
+</div>
+<!-- Slide 3: Traction -->
+<div class="slide">
+<h1>Traction</h1>
+<div class="content">
+<div class="stats">
+<div class="stat">
+<div class="stat-number">03</div>
+<div class="stat-label">Months Operating</div>
+</div>
+<div class="stat">
+<div class="stat-number">05</div>
+<div class="stat-label">Elite Crew</div>
+</div>
+<div class="stat">
+<div class="stat-number">01</div>
+<div class="stat-label">Major Portfolio</div>
+</div>
+</div>
+<p style="margin-top: 40px; text-align: center;">Successfully delivered <span class="highlight">"The Gathering by Marvels Diary"</span>.</p>
+</div>
+</div>
+<!-- Slide 4: Projections -->
+<div class="slide">
+<h1>Roadmap to Year 5</h1>
+<div class="content">
+<div class="timeline-item">
+<div class="timeline-year">Year 1</div>
+<p>₦4M Revenue Target. Building brand reputation in Lagos.</p>
+</div>
+<div class="timeline-item">
+<div class="timeline-year">Year 5</div>
+<p>Market Leader. Nigeria's biggest sourcing agency and media house.</p>
+</div>
+</div>
+</div>
+<!-- Slide 5: The Deal -->
+<div class="slide">
+<h1>Investment Terms</h1>
+<div class="content">
 <div class="deal-box">
-<div class="deal-item"><span>Capital Target</span><span style="font-weight: 800;">₦10,000,000</span></div>
-<div class="deal-item"><span>Equity Offered</span><span style="font-weight: 800;">10% Ownership</span></div>
-<div class="deal-item"><span>Valuation</span><span style="font-weight: 800;">₦100M</span></div>
-<div class="deal-item"><span>Rights</span><span style="font-weight: 800;">Observer Status</span></div>
+<div class="deal-item"><span>Investment Amount</span><span class="deal-value">₦10,000,000</span></div>
+<div class="deal-item"><span>Equity Offered</span><span class="deal-value">10% Ownership</span></div>
+<div class="deal-item"><span>Company Valuation</span><span class="deal-value">₦100M</span></div>
+<div class="deal-item"><span>Investor Rights</span><span class="deal-value">Observer Rights</span></div>
 </div>
 </div>
-<!-- Slide 3: Live Progress -->
+</div>
+<!-- Slide 6: FUNDRAISING TRACKER -->
 <div class="slide">
-<h1>LIVE PROGRESS</h1>
-<div class="fund-tracker">
-<div style="display: flex; justify-content: space-between; align-items: baseline;">
-<span style="font-size: 3rem; font-weight: 900;">₦<span id="raised">0</span></span>
-<span style="color: #444; font-weight: 700;">/ ₦10M GOAL</span>
+<h1>Fundraising Progress</h1>
+<div class="fundraise-container">
+<div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px;">
+<div class="amount-raised">₦<span id="amountRaised">0</span></div>
+<div style="font-size: 24px; color: #444;">/ ₦10,000,000</div>
 </div>
-<div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
-<div style="display: flex; justify-content: space-around; margin-top: 30px;">
-<div style="text-align: center;"><div style="font-size: 2rem; font-weight: 800;" id="count">0</div><div style="font-size: 0.7rem; color: #555; letter-spacing: 2px;">INVESTORS</div></div>
-<div style="text-align: center;"><div style="font-size: 2rem; font-weight: 800;" id="equity">10%</div><div style="font-size: 0.7rem; color: #555; letter-spacing: 2px;">EQUITY OPEN</div></div>
+<div class="progress-bar-container">
+<div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+</div>
+<div class="stats" style="margin-top: 30px;">
+<div class="stat">
+<div class="stat-number" id="investorCount">0</div>
+<div class="stat-label">Investors</div>
+</div>
+<div class="stat">
+<div class="stat-number" id="equityRemaining">10%</div>
+<div class="stat-label">Equity Available</div>
 </div>
 </div>
 </div>
-<!-- Slide 4: CTA -->
+</div>
+<!-- Slide 7: Contact -->
 <div class="slide">
-<h1>INITIATE PROTOCOL</h1>
-<p style="margin-bottom: 50px; font-size: 1.2rem; color: #aaa;">Join the legacy. Build the future of African media infrastructure.</p>
-<a href="mailto:invest@tiziano.media" class="cta-btn">Contact Relations</a>
+<h1>Let's Build Together</h1>
+<p style="font-size: 24px; margin-bottom: 40px;">Join us in building Nigeria's premier all-in-one media house.</p>
+<a href="mailto:invest@tiziano.media" class="cta-button">Initiate Discussion</a>
 </div>
+</div>
+<div class="nav-dots">
+<div class="nav-dot" onclick="scrollToSlide(0)"></div>
+<div class="nav-dot" onclick="scrollToSlide(1)"></div>
+<div class="nav-dot" onclick="scrollToSlide(2)"></div>
+<div class="nav-dot" onclick="scrollToSlide(3)"></div>
+<div class="nav-dot" onclick="scrollToSlide(4)"></div>
+<div class="nav-dot" onclick="scrollToSlide(5)"></div>
+<div class="nav-dot" onclick="scrollToSlide(6)"></div>
 </div>
 <script>
-// --- UPDATE CAPITAL DATA HERE ---
+function scrollToSlide(index) {
+const slides = document.querySelectorAll('.slide');
+slides[index].scrollIntoView({ behavior: 'smooth' });
+}
+// --- UPDATE DATA HERE ---
 const totalRaised = 0;
 const investorCount = 0;
-// -------------------------------
-document.getElementById('raised').textContent = totalRaised.toLocaleString();
-document.getElementById('count').textContent = investorCount;
-document.getElementById('bar').style.width = (totalRaised / 10000000 * 100) + '%';
-document.getElementById('equity').textContent = (10 - (totalRaised / 1000000)).toFixed(1) + '%';
+const goalAmount = 10000000;
+// -----------------------
+const percentage = (totalRaised / goalAmount) * 100;
+const equityOpen = 10 - ((totalRaised / 1000000) * 1);
+document.getElementById('amountRaised').textContent = totalRaised.toLocaleString();
+document.getElementById('progressBar').style.width = percentage + '%';
+document.getElementById('investorCount').textContent = investorCount;
+document.getElementById('equityRemaining').textContent = Math.max(0, equityOpen).toFixed(1) + '%';
 </script>
 </body>
 </html>
