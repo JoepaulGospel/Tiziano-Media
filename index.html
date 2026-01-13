@@ -6,18 +6,17 @@
 <title>TIZIANO | Home</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-:root { --bg: #000000; --text: #ffffff; --border: rgba(255, 255, 255, 0.1); }
+:root { --bg: #000000; --text: #ffffff; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; scroll-behavior: smooth; }
 .brand-font { font-family: 'Cinzel', serif; letter-spacing: 4px; }
 nav {
 padding: 25px 5%; display: flex; justify-content: space-between; align-items: center;
-position: fixed; width: 100%; z-index: 1000; background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
-transition: 0.3s;
+position: fixed; width: 100%; z-index: 2000; background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
 }
 .nav-logo { font-size: 1.4rem; text-decoration: none; color: white; font-weight: 900; }
-.nav-links { display: flex; gap: 30px; }
-.nav-links a { color: white; text-decoration: none; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.7; transition: 0.3s; }
+.nav-links { display: flex; gap: 25px; }
+.nav-links a { color: white; text-decoration: none; font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.7; transition: 0.3s; }
 .nav-links a:hover { opacity: 1; color: #aaa; }
 .hero {
 height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; position: relative; text-align: center;
@@ -25,29 +24,25 @@ background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.9)), url('https://imag
 background-size: cover; background-position: center;
 }
 .hero h1 { font-size: clamp(4rem, 15vw, 11rem); line-height: 0.8; margin-bottom: 20px; }
-.hero-tagline { font-size: 0.9rem; letter-spacing: 6px; color: #888; text-transform: uppercase; font-weight: 400; }
 .ecosystem { padding: 100px 5%; background: #000; }
-.section-label { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: #555; margin-bottom: 50px; display: block; text-align: center; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 15px; }
-.tile { height: 550px; background: #0a0a0a; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 50px; text-decoration: none; color: white; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
-.tile:hover { transform: scale(1.01); }
-.tile img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; transition: 0.8s filter, 0.8s transform; filter: grayscale(100%); }
-.tile:hover img { opacity: 0.8; transform: scale(1.05); filter: grayscale(0%); }
-.tile-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, transparent 60%); z-index: 1; }
+.tile { height: 550px; background: #0a0a0a; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 50px; text-decoration: none; color: white; transition: 0.6s; }
+.tile img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; filter: grayscale(100%); transition: 0.8s; }
+.tile:hover img { opacity: 0.7; filter: grayscale(0%); transform: scale(1.05); }
+.tile-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent 80%); z-index: 1; }
 .tile-content { position: relative; z-index: 2; }
-.tile-content p { font-size: 0.7rem; letter-spacing: 3px; color: #888; margin-bottom: 10px; text-transform: uppercase; }
-.tile-content h3 { font-size: 2rem; }
-footer { padding: 120px 5% 60px; background: #000; border-top: 1px solid #111; text-align: center; }
-.footer-logo { font-size: 6rem; opacity: 0.05; margin-top: 50px; }
-@media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 5rem; } .grid { grid-template-columns: 1fr; } }
+.tile-content p { font-size: 0.65rem; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-bottom: 10px; }
+footer { padding: 80px 5%; text-align: center; border-top: 1px solid #111; }
+.footer-logo { font-size: 5rem; opacity: 0.05; }
+@media (max-width: 768px) { .nav-links { display: none; } }
 </style>
 </head>
 <body>
 <nav>
-<a href="/home" class="nav-logo brand-font">TIZIANO</a>
+<a href="/" class="nav-logo brand-font">TIZIANO</a>
 <div class="nav-links">
-<a href="/home">Home</a>
-<a href="/about">About</a>
+<a href="/">Home</a>
+<a href="/about">About Us</a>
 <a href="/portfolio">Portfolio</a>
 <a href="/films">Films</a>
 <a href="/roadmap">Roadmap</a>
@@ -58,37 +53,28 @@ footer { padding: 120px 5% 60px; background: #000; border-top: 1px solid #111; t
 <div class="hero">
 <div class="hero-content">
 <h1 class="brand-font">TIZIANO</h1>
-<p class="hero-tagline">Entertainment & Content Solutions</p>
+<p style="letter-spacing: 6px; color: #888; text-transform: uppercase;">Unified Media Infrastructure</p>
 </div>
 </div>
 <section class="ecosystem">
-<span class="section-label">The Tiziano Ecosystem</span>
 <div class="grid">
 <a href="/portfolio" class="tile">
-<img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=2070">
+<img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80">
 <div class="tile-overlay"></div>
-<div class="tile-content"><p>Work</p><h3 class="brand-font">PORTFOLIO</h3></div>
+<div class="tile-content"><p>Our Services</p><h3 class="brand-font">EVENT COVERAGE</h3></div>
 </a>
 <a href="/about" class="tile">
-<img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=2012">
+<img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80">
 <div class="tile-overlay"></div>
-<div class="tile-content"><p>The House</p><h3 class="brand-font">ABOUT US</h3></div>
+<div class="tile-content"><p>What We Do</p><h3 class="brand-font">SOURCING</h3></div>
 </a>
 <a href="/films" class="tile">
-<img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=2059">
+<img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80">
 <div class="tile-overlay"></div>
-<div class="tile-content"><p>Studio</p><h3 class="brand-font">PRODUCTION</h3></div>
+<div class="tile-content"><p>Studio</p><h3 class="brand-font">FILM PRODUCTION</h3></div>
 </a>
 </div>
 </section>
-<footer>
-<div style="display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap;">
-<a href="/about" style="color: #666; text-decoration: none; font-size: 0.8rem;">ABOUT US</a>
-<a href="/investors" style="color: #666; text-decoration: none; font-size: 0.8rem;">INVESTORS</a>
-<a href="/films" style="color: #666; text-decoration: none; font-size: 0.8rem;">FILMS</a>
-<a href="/roadmap" style="color: #666; text-decoration: none; font-size: 0.8rem;">ROADMAP</a>
-</div>
-<div class="footer-logo brand-font">TIZIANO</div>
-</footer>
+<footer><div class="footer-logo brand-font">TIZIANO</div></footer>
 </body>
 </html>
