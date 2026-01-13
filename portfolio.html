@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TIZIANO | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #000; --text: #fff; --accent: #888; }
+body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
+.brand-font { font-family: 'Cinzel', serif; letter-spacing: 4px; }
+nav { padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; background: #000; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-size: 1.5rem; text-decoration: none; color: #fff; }
+.nav-links { display: flex; gap: 20px; }
+.nav-links a { color: #fff; text-decoration: none; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; opacity: 0.6; }
+.nav-links a:hover { opacity: 1; }
+section { padding: 80px 5%; }
+h1 { font-size: 3rem; margin-bottom: 50px; text-align: center; }
+/* The Portfolio Grid */
+.portfolio-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+gap: 20px;
+}
+.work-item {
+position: relative;
+height: 300px;
+background: #111;
+overflow: hidden;
+cursor: pointer;
+}
+.work-item img {
+width: 100%; height: 100%; object-fit: cover;
+transition: 0.5s; opacity: 0.6;
+}
+.work-item:hover img { transform: scale(1.05); opacity: 0.9; }
+.work-info {
+position: absolute; bottom: 20px; left: 20px;
+z-index: 2;
+}
+.work-info h3 { margin: 0; font-size: 1.2rem; letter-spacing: 2px; }
+.work-info p { margin: 5px 0 0; font-size: 0.7rem; color: var(--accent); text-transform: uppercase; }
+@media (max-width: 600px) { .portfolio-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+<a href="/home" class="nav-logo brand-font">TIZIANO</a>
+<div class="nav-links">
+<a href="/portfolio">Portfolio</a>
+<a href="/films">Films</a>
+<a href="/about">About</a>
+<a href="/investors">Investors</a>
+<a href="/roadmap">Roadmap</a>
+</div>
+</nav>
+<section>
+<h1 class="brand-font">Selected Work</h1>
+<div class="portfolio-grid">
+<!-- Project 1 -->
+<div class="work-item">
+<img src="https://images.unsplash.com/photo-1492691523567-6170f229c411?auto=format&fit=crop&q=80" alt="Marvels Diary">
+<div class="work-info">
+<h3 class="brand-font">The Gathering</h3>
+<p>Cinematography / Event Coverage</p>
+</div>
+</div>
+<!-- More items can be added here -->
+</div>
+</section>
+</body>
+</html>
