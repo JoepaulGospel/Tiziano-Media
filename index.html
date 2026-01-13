@@ -8,30 +8,84 @@
 <style>
 :root { --bg: #000000; --text: #ffffff; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; scroll-behavior: smooth; }
+body {
+font-family: 'Inter', sans-serif;
+background: var(--bg);
+color: var(--text);
+overflow-x: hidden;
+scroll-behavior: smooth;
+}
 .brand-font { font-family: 'Cinzel', serif; letter-spacing: 4px; }
 nav {
-padding: 25px 5%; display: flex; justify-content: space-between; align-items: center;
-position: fixed; width: 100%; z-index: 2000; background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+padding: 25px 5%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: fixed;
+width: 100%;
+z-index: 2000;
+background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+transition: 0.3s;
 }
 .nav-logo { font-size: 1.4rem; text-decoration: none; color: white; font-weight: 900; }
 .nav-links { display: flex; gap: 25px; }
-.nav-links a { color: white; text-decoration: none; font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.7; transition: 0.3s; }
+.nav-links a {
+color: white;
+text-decoration: none;
+font-size: 0.7rem;
+font-weight: 700;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+opacity: 0.7;
+transition: 0.3s;
+}
 .nav-links a:hover { opacity: 1; color: #aaa; }
 .hero {
-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; position: relative; text-align: center;
-background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1492691523567-6170f229c411?auto=format&fit=crop&q=80&w=2070');
-background-size: cover; background-position: center;
+height: 100vh;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+text-align: center;
+background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1492691523567-6170f229c411?auto=format&fit=crop&q=80&w=2070');
+background-size: cover;
+background-position: center;
 }
 .hero h1 { font-size: clamp(4rem, 15vw, 11rem); line-height: 0.8; margin-bottom: 20px; }
 .ecosystem { padding: 100px 5%; background: #000; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 15px; }
-.tile { height: 550px; background: #0a0a0a; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 50px; text-decoration: none; color: white; transition: 0.6s; }
-.tile img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; filter: grayscale(100%); transition: 0.8s; }
+.tile {
+height: 550px;
+background: #0a0a0a;
+position: relative;
+overflow: hidden;
+display: flex;
+align-items: flex-end;
+padding: 50px;
+text-decoration: none;
+color: white;
+transition: 0.6s;
+}
+.tile img {
+position: absolute;
+top: 0; left: 0;
+width: 100%; height: 100%;
+object-fit: cover;
+opacity: 0.4;
+filter: grayscale(100%);
+transition: 0.8s;
+}
 .tile:hover img { opacity: 0.7; filter: grayscale(0%); transform: scale(1.05); }
-.tile-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent 80%); z-index: 1; }
+.tile-overlay {
+position: absolute;
+top: 0; left: 0;
+width: 100%; height: 100%;
+background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent 80%);
+z-index: 1;
+}
 .tile-content { position: relative; z-index: 2; }
-.tile-content p { font-size: 0.65rem; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-bottom: 10px; }
 footer { padding: 80px 5%; text-align: center; border-top: 1px solid #111; }
 .footer-logo { font-size: 5rem; opacity: 0.05; }
 @media (max-width: 768px) { .nav-links { display: none; } }
@@ -58,20 +112,29 @@ footer { padding: 80px 5%; text-align: center; border-top: 1px solid #111; }
 </div>
 <section class="ecosystem">
 <div class="grid">
+<!-- Tile 1: Event Coverage -->
 <a href="/portfolio" class="tile">
 <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80">
 <div class="tile-overlay"></div>
-<div class="tile-content"><p>Our Services</p><h3 class="brand-font">EVENT COVERAGE</h3></div>
+<div class="tile-content">
+<h3 class="brand-font">EVENT COVERAGE</h3>
+</div>
 </a>
+<!-- Tile 2: Sourcing -->
 <a href="/about" class="tile">
 <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80">
 <div class="tile-overlay"></div>
-<div class="tile-content"><p>What We Do</p><h3 class="brand-font">SOURCING</h3></div>
+<div class="tile-content">
+<h3 class="brand-font">SOURCING</h3>
+</div>
 </a>
+<!-- Tile 3: Film Production -->
 <a href="/films" class="tile">
 <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80">
 <div class="tile-overlay"></div>
-<div class="tile-content"><p>Studio</p><h3 class="brand-font">FILM PRODUCTION</h3></div>
+<div class="tile-content">
+<h3 class="brand-font">FILM PRODUCTION</h3>
+</div>
 </a>
 </div>
 </section>
