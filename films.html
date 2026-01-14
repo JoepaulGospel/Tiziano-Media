@@ -2,19 +2,70 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TIZIANO | Films</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Inter:wght@300&display=swap" rel="stylesheet">
 <style>
-body { background: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; display: flex; flex-direction: column; height: 100vh; }
-nav { padding: 25px 5%; display: flex; justify-content: space-between; }
-.logo { font-family: 'Cinzel', serif; color: #fff; text-decoration: none; font-size: 1.5rem; letter-spacing: 4px; }
-.content { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-h1 { font-family: 'Cinzel', serif; font-size: 4rem; margin-bottom: 10px; }
-p { letter-spacing: 8px; color: #555; text-transform: uppercase; font-size: 1rem; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+background: #000;
+color: #fff;
+font-family: 'Inter', sans-serif;
+margin: 0;
+display: flex;
+flex-direction: column;
+height: 100vh;
+overflow: hidden;
+}
+nav {
+padding: 25px 5%;
+display: flex;
+justify-content: space-between;
+width: 100%;
+}
+.logo {
+font-family: 'Cinzel', serif;
+color: #fff;
+text-decoration: none;
+font-size: 1.5rem;
+letter-spacing: 4px;
+}
+.content {
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 20px;
+}
+h1 {
+font-family: 'Cinzel', serif;
+font-size: clamp(2.5rem, 10vw, 4rem);
+margin-bottom: 10px;
+}
+p {
+/* Fluid letter-spacing to prevent breaking on small phones */
+letter-spacing: clamp(4px, 2vw, 8px);
+color: #555;
+text-transform: uppercase;
+font-size: clamp(0.8rem, 2vw, 1rem);
+}
+/* MOBILE OVERRIDES */
+@media (max-width: 768px) {
+nav {
+padding: 20px 5%;
+justify-content: center; /* Center logo on mobile */
+}
+.logo {
+font-size: 1.2rem;
+letter-spacing: 2px;
+}
+}
 </style>
 </head>
 <body>
-<nav><a href="/home" class="logo">TIZIANO</a></nav>
+<nav><a href="/" class="logo">TIZIANO</a></nav>
 <div class="content">
 <h1>FILMS</h1>
 <p>Coming Soon...</p>
