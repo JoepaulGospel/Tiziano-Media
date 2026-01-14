@@ -53,9 +53,13 @@ url('https://images.unsplash.com/photo-1492691523567-6170f229c411?auto=format&fi
 background-size: cover;
 background-position: center;
 }
-.hero h1 { font-size: clamp(4rem, 15vw, 11rem); line-height: 0.8; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(3rem, 15vw, 11rem); line-height: 0.8; margin-bottom: 20px; }
 .ecosystem { padding: 100px 5%; background: #000; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 15px; }
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+gap: 15px;
+}
 .tile {
 height: 550px;
 background: #0a0a0a;
@@ -80,15 +84,38 @@ transition: 0.8s;
 .tile:hover img { opacity: 0.7; filter: grayscale(0%); transform: scale(1.05); }
 .tile-overlay {
 position: absolute;
-top: 0; left: 0;
-width: 100%; height: 100%;
+top: 0; left: 0; width: 100%; height: 100%;
 background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent 80%);
 z-index: 1;
 }
 .tile-content { position: relative; z-index: 2; }
 footer { padding: 80px 5%; text-align: center; border-top: 1px solid #111; }
-.footer-logo { font-size: 5rem; opacity: 0.05; }
-@media (max-width: 768px) { .nav-links { display: none; } }
+.footer-logo { font-size: clamp(2rem, 10vw, 5rem); opacity: 0.05; }
+/* MOBILE OPTIMIZATION OVERRIDES */
+@media (max-width: 768px) {
+nav {
+padding: 15px 5%;
+flex-direction: column; /* Stack logo above links on small phones */
+background: rgba(0,0,0,0.95);
+}
+.nav-logo { margin-bottom: 15px; }
+.nav-links {
+gap: 15px;
+flex-wrap: wrap;
+justify-content: center;
+}
+.nav-links a { font-size: 0.6rem; }
+.hero h1 { font-size: 4rem; }
+.grid {
+grid-template-columns: 1fr; /* Force tiles to stack vertically */
+}
+.tile {
+height: 400px; /* Slightly shorter on mobile for better scrolling */
+padding: 30px;
+}
+.tile-content h3 { font-size: 1.5rem; }
+.ecosystem { padding: 60px 5%; }
+}
 </style>
 </head>
 <body>
