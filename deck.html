@@ -4,10 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tiziano Pitch Deck</title>
-<!-- Adding Cinzel and Inter -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* Your original styles start here */
 * {
 margin: 0;
 padding: 0;
@@ -37,26 +34,6 @@ padding: 60px 40px;
 scroll-snap-align: start;
 position: relative;
 }
-/* UPDATED LOGO WITH CINZEL */
-.logo {
-font-family: 'Cinzel', serif;
-font-size: 72px;
-font-weight: 900;
-letter-spacing: 8px;
-margin-bottom: 30px;
-background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-}
-/* NEW BACK BUTTON */
-.home-nav {
-position: fixed; top: 20px; left: 20px; z-index: 2000;
-color: white; text-decoration: none; font-size: 0.7rem;
-letter-spacing: 2px; border: 1px solid rgba(255,255,255,0.2);
-padding: 10px 15px; background: rgba(0,0,0,0.5);
-}
-/* REST OF YOUR ORIGINAL STYLES */
 .slide::before {
 content: '';
 position: absolute;
@@ -67,8 +44,19 @@ bottom: 0;
 background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
 pointer-events: none;
 }
+/* Cover Slide */
 .cover {
 background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+.logo {
+font-size: 72px;
+font-weight: 900;
+letter-spacing: 4px;
+margin-bottom: 30px;
+background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
 }
 .subtitle {
 font-size: 24px;
@@ -77,6 +65,7 @@ font-weight: 300;
 text-align: center;
 max-width: 600px;
 }
+/* Content Slides */
 .slide-number {
 position: absolute;
 top: 30px;
@@ -111,6 +100,7 @@ margin-bottom: 20px;
 color: #ffffff;
 font-weight: 600;
 }
+/* Services Grid */
 .services-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -138,6 +128,7 @@ color: #ffffff;
 font-size: 16px;
 color: #aaa;
 }
+/* Features List */
 .features {
 list-style: none;
 margin-top: 30px;
@@ -155,6 +146,7 @@ position: absolute;
 left: 0;
 color: #888;
 }
+/* Stats */
 .stats {
 display: flex;
 justify-content: space-around;
@@ -177,6 +169,7 @@ color: #888;
 text-transform: uppercase;
 letter-spacing: 2px;
 }
+/* Project Showcase */
 .project-box {
 background: rgba(255, 255, 255, 0.03);
 border: 1px solid rgba(255, 255, 255, 0.1);
@@ -194,6 +187,7 @@ color: #ffffff;
 font-size: 18px;
 color: #aaa;
 }
+/* Team */
 .team-info {
 background: rgba(255, 255, 255, 0.03);
 border: 1px solid rgba(255, 255, 255, 0.1);
@@ -201,6 +195,7 @@ padding: 40px;
 border-radius: 12px;
 margin-top: 30px;
 }
+/* CTA */
 .cta {
 margin-top: 50px;
 text-align: center;
@@ -220,6 +215,7 @@ transition: all 0.3s ease;
 background: #e0e0e0;
 transform: scale(1.05);
 }
+/* Navigation */
 .nav-dots {
 position: fixed;
 right: 30px;
@@ -240,19 +236,67 @@ transition: all 0.3s ease;
 background: rgba(255, 255, 255, 0.6);
 transform: scale(1.3);
 }
+/* ============================================================
+MOBILE PORTABILITY OVERRIDES (NEW)
+============================================================ */
 @media (max-width: 768px) {
-.logo { font-size: 48px; }
-h1 { font-size: 36px; }
-h2 { font-size: 28px; }
-p, .features li { font-size: 18px; }
-.slide { padding: 40px 20px; }
-.services-grid { grid-template-columns: 1fr; }
+.slide {
+padding: 40px 20px;
+}
+.logo {
+font-size: 42px; /* Scaled down for mobile */
+letter-spacing: 2px;
+}
+h1 {
+font-size: 32px; /* Avoid text overflow */
+margin-bottom: 20px;
+}
+h2 {
+font-size: 26px;
+}
+p, .features li {
+font-size: 16px; /* Optimized reading size for handheld */
+line-height: 1.6;
+}
+.subtitle {
+font-size: 18px;
+}
+.services-grid {
+grid-template-columns: 1fr; /* Stack vertically */
+gap: 20px;
+}
+.service-card {
+padding: 25px 20px;
+}
+.stats {
+flex-direction: column; /* Stack stats vertically */
+gap: 30px;
+margin-top: 30px;
+}
+.stat-number {
+font-size: 36px;
+}
+.project-box {
+padding: 30px 20px;
+}
+.project-box h3 {
+font-size: 24px;
+}
+.team-info {
+padding: 25px;
+}
+.cta-button {
+padding: 15px 30px;
+font-size: 16px;
+width: 100%; /* Full width button for easier tapping */
+}
+.nav-dots {
+right: 15px; /* Move dots closer to edge to save space */
+}
 }
 </style>
 </head>
 <body>
-<!-- Back Button -->
-<a href="roadmap.html" class="home-nav">← BACK TO ROADMAP</a>
 <div class="deck-container" id="deck">
 <!-- Slide 1: Cover -->
 <div class="slide cover">
@@ -396,17 +440,19 @@ function scrollToSlide(index) {
 const slides = document.querySelectorAll('.slide');
 slides[index].scrollIntoView({ behavior: 'smooth' });
 }
+// Keyboard navigation
 document.addEventListener('keydown', (e) => {
 const slides = document.querySelectorAll('.slide');
-const currentScroll = window.scrollY;
-let currentSlide = 0;
-slides.forEach((slide, index) => {
-if (slide.offsetTop <= currentScroll + 100) { currentSlide = index; }
-});
+const currentScroll = document.getElementById('deck').scrollTop;
+let currentSlide = Math.round(currentScroll / window.innerHeight);
 if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-if (currentSlide < slides.length - 1) { scrollToSlide(currentSlide + 1); }
+if (currentSlide < slides.length - 1) {
+scrollToSlide(currentSlide + 1);
+}
 } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-if (currentSlide > 0) { scrollToSlide(currentSlide - 1); }
+if (currentSlide > 0) {
+scrollToSlide(currentSlide - 1);
+}
 }
 });
 </script>
