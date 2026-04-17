@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIZIANO | Tribe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="/" class="logo">TIZIANO</a>
+        <div class="nav-links">
+            <a href="/about" class="nav-link">About</a>
+            <a href="/portfolio" class="nav-link">Portfolio</a>
+            <a href="/films" class="nav-link">Films</a>
+            <a href="/tribe" class="nav-link active">Tribe</a>
+            <a href="https://www.instagram.com/the_official_tiziano" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Glass Panel -->
+        <header class="hero-tribe">
+            <div class="glass-panel hero-glass">
+                <h1>TIZIANO TRIBE</h1>
+                <p>A creators movement</p>
+            </div>
+        </header>
+
+        <!-- The Call - Extended Manifesto -->
+        <section class="container">
+            <div class="manifesto-text">
+                <p class="manifesto-intro">This is an invitation.</p>
+                <p>Not to work for us. Not to chase budgets. But to build something that matters—with us, and with each other.</p>
+                <p>Tiziano Tribe is where vision meets vision. Where directors find their actors. Where cinematographers meet their storytellers. Where editors shape raw moments into lasting impact. This is not a job posting. This is a gathering of those who believe that great work doesn't need permission—it needs people.</p>
+                <p>We're building films. Short films. Long films. Documentaries. Brand stories that refuse to be ordinary. Projects born from belief, not balance sheets. And we need you.</p>
+                <p>Whether you're in front of the camera or behind it. Whether you write the words or light the scene. Whether you cut the footage or score the silence. If you have a skill and a hunger to create, there's a place for you here.</p>
+                <p>This is passion-first. No guarantees. No paychecks. Just opportunity, collaboration, and the chance to build work you'll be proud to call yours.</p>
+                <p class="manifesto-close">If that resonates—step in. The Tribe is waiting.</p>
+            </div>
+        </section>
+
+        <!-- What We're Building -->
+        <section class="container">
+            <div class="section-header">
+                <p>What We're Building</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="glass-panel project-card">
+                    <h3>Short Film</h3>
+                    <p>Narrative Drama</p>
+                    <span class="status">Casting & Crew Open</span>
+                </div>
+                <div class="glass-panel project-card">
+                    <h3>Documentary Series</h3>
+                    <p>Lifestyle & Culture</p>
+                    <span class="status">All Roles Welcome</span>
+                </div>
+                <div class="glass-panel project-card">
+                    <h3>Brand Campaign</h3>
+                    <p>Commercial Project</p>
+                    <span class="status">Production Phase</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roles We Need -->
+        <section class="container">
+            <div class="section-header">
+                <p>Roles We Need</p>
+            </div>
+            
+            <div class="roles-grid">
+                <div class="glass-tag">Actors</div>
+                <div class="glass-tag">Directors</div>
+                <div class="glass-tag">Cinematographers</div>
+                <div class="glass-tag">Editors</div>
+                <div class="glass-tag">Sound Design</div>
+                <div class="glass-tag">Writers</div>
+                <div class="glass-tag">Producers</div>
+                <div class="glass-tag">Colorists</div>
+                <div class="glass-tag">MU Artists</div>
+                <div class="glass-tag">Stylists</div>
+                <div class="glass-tag">VFX</div>
+                <div class="glass-tag">Composers</div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="container">
+            <div class="section-header">
+                <p>How It Works</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Register</h3>
+                    <p>Share your skill + portfolio</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Create</h3>
+                    <p>Join projects that match your craft</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Release</h3>
+                    <p>Get credited. Build your reel. Leave a mark.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Form -->
+        <section class="container">
+            <div class="glass-panel registration-form">
+                <div class="section-header" style="margin-bottom: 2.5rem;">
+                    <h2>Join the Tribe</h2>
+                </div>
+                
+                <form class="tribe-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role">Role / Skill</label>
+                        <input type="text" id="role" name="role" placeholder="e.g., Cinematographer, Actor, Editor" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="portfolio">Portfolio / Instagram Link</label>
+                        <input type="url" id="portfolio" name="portfolio" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="availability">Availability</label>
+                        <select id="availability" name="availability" required>
+                            <option value="">Select...</option>
+                            <option value="full-time">Full-time</option>
+                            <option value="part-time">Part-time</option>
+                            <option value="project-based">Project-based</option>
+                            <option value="weekends">Weekends only</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Join the Tribe</button>
+                    
+                    <p class="form-note">We review manually. Expect a reply in 7 days.</p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer CTA -->
+        <section class="container" style="text-align: center; padding: 80px 0;">
+            <p style="color: var(--text-secondary);">Questions? DM us <a href="https://www.instagram.com/the_official_tiziano" style="color: #fff; text-decoration: none; border-bottom: 1px solid #fff;">@the_official_tiziano</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <p style="margin-bottom: 0.5rem; color: #fff; font-family: 'Cinzel', serif; letter-spacing: 0.2em; font-size: 1rem;">TIZIANO</p>
+            <p>&copy; 2026 Tiziano Media House. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
