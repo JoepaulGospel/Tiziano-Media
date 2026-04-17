@@ -7,9 +7,11 @@
   --text-primary: #ffffff;
   --text-secondary: #86868b;
   --border: #222224;
-  --accent: #ffffff;
-  --nav-height: 54px;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.12);
   --max-w: 1120px;
+  --nav-height: 54px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -83,7 +85,29 @@ section { padding: 120px 0; }
   letter-spacing: 0.1em;
   font-weight: 400;
 }
-.nav-link:hover { color: var(--text-primary); }
+.nav-link:hover, .nav-link.active { color: var(--text-primary); }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #fff;
+  color: #000;
+  border-radius: 980px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn:hover { transform: scale(1.03); opacity: 0.9; }
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  margin-left: 12px;
+}
+.btn-outline:hover { background: #fff; color: #000; }
 
 /* Hero */
 .hero {
@@ -114,28 +138,6 @@ section { padding: 120px 0; }
   font-size: clamp(1rem, 1.5vw, 1.35rem);
   line-height: 1.6;
 }
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 14px 32px;
-  background: #fff;
-  color: #000;
-  border-radius: 980px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.btn:hover { transform: scale(1.03); opacity: 0.9; }
-
-.btn-outline {
-  background: transparent;
-  color: #fff;
-  border: 1px solid #fff;
-  margin-left: 12px;
-}
-.btn-outline:hover { background: #fff; color: #000; }
 
 /* Services Grid */
 .grid {
@@ -190,4 +192,257 @@ footer {
   .nav-links { display: none; }
   section { padding: 80px 0; }
   h1 { font-size: 3.2rem; }
+}
+
+/* --- Tribe Page Styles --- */
+.hero-tribe {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  background: radial-gradient(ellipse at center, #111 0%, #000 70%);
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.hero-glass {
+  text-align: center;
+  padding: 80px 60px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.hero-glass h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.hero-glass p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.manifesto-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.manifesto-text p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin-bottom: 1.8rem;
+  color: var(--text-secondary);
+}
+
+.manifesto-intro {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem !important;
+  color: #fff !important;
+  margin-bottom: 2.5rem !important;
+}
+
+.manifesto-close {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem !important;
+  color: #fff !important;
+  margin-top: 3rem !important;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  margin-top: 3rem;
+}
+
+.project-card {
+  background: var(--bg-subtle);
+  padding: 48px 32px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.project-card:hover {
+  background: #0f0f10;
+  transform: translateY(-2px);
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 980px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+}
+
+.roles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.glass-tag {
+  padding: 12px 28px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 980px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.glass-tag:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.step-card {
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.step-number {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.step-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #fff;
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  margin: 0 auto;
+}
+
+.registration-form {
+  max-width: 600px; 
+  margin: 0 auto; 
+  padding: 60px 40px;
+}
+
+.tribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.form-group input,
+.form-group select {
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.05);
+}
+
+.form-group input::placeholder {
+  color: var(--text-secondary);
+}
+
+.btn-submit {
+  margin-top: 1rem;
+  padding: 18px 32px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 980px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.form-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-glass { padding: 60px 32px; }
+  .manifesto-text p { font-size: 1.05rem; }
+  .project-card { padding: 40px 24px; }
+  .registration-form { padding: 40px 24px !important; }
 }
