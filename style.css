@@ -310,7 +310,7 @@ footer {
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 6rem; /* Increased spacing */
 }
 
 .glass-tag {
@@ -337,7 +337,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 6rem; /* Increased spacing */
 }
 
 .step-card {
@@ -401,6 +401,20 @@ footer {
   font-size: 1rem;
   transition: all 0.3s ease;
   outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.form-group select option {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.form-group select option:hover {
+  background: #1a1a1a;
 }
 
 .form-group input:focus,
