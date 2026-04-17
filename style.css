@@ -3,13 +3,13 @@
 
 :root {
   --bg: #000000;
-  --bg-subtle: #0a0a0a;
+  --bg-subtle: #050505;
   --text-primary: #ffffff;
   --text-secondary: #86868b;
-  --border: #222224;
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-highlight: rgba(255, 255, 255, 0.12);
+  --border: #1a1a1c;
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-highlight: rgba(255, 255, 255, 0.1);
   --max-w: 1120px;
   --nav-height: 54px;
 }
@@ -61,9 +61,9 @@ section { padding: 120px 0; }
   justify-content: space-between;
   align-items: center;
   padding: 0 32px;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   z-index: 100;
   border-bottom: 1px solid var(--border);
 }
@@ -116,7 +116,7 @@ section { padding: 120px 0; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: radial-gradient(ellipse at center, #111 0%, #000 60%);
+  background: radial-gradient(ellipse at center, #0f0f0f 0%, #000 65%);
 }
 
 .hero-content {
@@ -139,6 +139,56 @@ section { padding: 120px 0; }
   line-height: 1.6;
 }
 
+/* Liquid Glass Panels */
+.glass-panel {
+  background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.005) 100%);
+  backdrop-filter: blur(48px) saturate(160%);
+  -webkit-backdrop-filter: blur(48px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 32px;
+  box-shadow: 
+    0 12px 40px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -1px 0 rgba(255,255,255,0.03);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Refractive light sweep */
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 220%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.02) 40%,
+    rgba(255,255,255,0.06) 50%,
+    rgba(255,255,255,0.02) 60%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  transition: left 0.9s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,0.14);
+  box-shadow: 
+    0 20px 50px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.15),
+    inset 0 -1px 0 rgba(255,255,255,0.05);
+}
+
+.glass-panel:hover::before {
+  left: 110%;
+}
+
 /* Services Grid */
 .grid {
   display: grid;
@@ -146,7 +196,7 @@ section { padding: 120px 0; }
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
-  border-radius: 24px;
+  border-radius: 32px;
   overflow: hidden;
   margin-top: 4rem;
 }
@@ -154,9 +204,9 @@ section { padding: 120px 0; }
 .cell {
   background: var(--bg-subtle);
   padding: 64px 40px;
-  transition: background 0.4s;
+  transition: all 0.4s ease;
 }
-.cell:hover { background: #0f0f10; }
+.cell:hover { background: #0d0d0d; }
 
 .cell h3 { color: #fff; margin-bottom: 1rem; }
 .cell p { font-size: 0.95rem; margin: 0 auto; }
@@ -164,7 +214,7 @@ section { padding: 120px 0; }
 /* Section Headers */
 .section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 .section-header p {
   margin: 0 auto;
@@ -201,16 +251,7 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 120px 24px 80px;
-  background: radial-gradient(ellipse at center, #111 0%, #000 70%);
-}
-
-.glass-panel {
-  background: var(--glass-bg);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--glass-border);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  background: radial-gradient(ellipse at center, #0f0f0f 0%, #000 70%);
 }
 
 .hero-glass {
@@ -265,7 +306,7 @@ footer {
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
-  border-radius: 24px;
+  border-radius: 32px;
   overflow: hidden;
   margin-top: 3rem;
 }
@@ -278,7 +319,7 @@ footer {
 }
 
 .project-card:hover {
-  background: #0f0f10;
+  background: #0d0d0d;
   transform: translateY(-2px);
 }
 
@@ -296,7 +337,7 @@ footer {
 .status {
   display: inline-block;
   padding: 6px 16px;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.04);
   border: 1px solid var(--border);
   border-radius: 980px;
   font-size: 0.75rem;
@@ -310,7 +351,7 @@ footer {
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
-  margin-top: 6rem; /* Increased spacing */
+  margin-top: 8rem; /* Increased spacing */
 }
 
 .glass-tag {
@@ -327,8 +368,8 @@ footer {
 }
 
 .glass-tag:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.15);
   color: #fff;
   transform: translateY(-2px);
 }
@@ -337,7 +378,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  margin-top: 6rem; /* Increased spacing */
+  margin-top: 8rem; /* Increased spacing */
 }
 
 .step-card {
@@ -395,7 +436,7 @@ footer {
   padding: 16px 20px;
   background: rgba(255,255,255,0.03);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 14px;
   color: #fff;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
@@ -411,10 +452,6 @@ footer {
   color: #fff;
   padding: 12px;
   font-size: 1rem;
-}
-
-.form-group select option:hover {
-  background: #1a1a1a;
 }
 
 .form-group input:focus,
