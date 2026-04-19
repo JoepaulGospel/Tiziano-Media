@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIZIANO | Films</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIZIANO | Films</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav class="nav">
+    <a href="/" class="logo">TIZIANO</a>
+    <div class="nav-links">
+      <a href="/about" class="nav-link">About</a>
+      <a href="/portfolio" class="nav-link">Portfolio</a>
+      <a href="/films" class="nav-link active">Films</a>
+      <a href="/tribe" class="nav-link">Tribe</a>
+      <a href="https://www.instagram.com/the_official_tiziano" class="nav-link">Contact</a>
+    </div>
+  </nav>
 
-    <nav class="nav">
-        <a href="/" class="logo">TIZIANO</a>
-        <div class="nav-links">
-            <a href="/about" class="nav-link">About</a>
-            <a href="/portfolio" class="nav-link">Portfolio</a>
-            <a href="/films" class="nav-link active">Films</a>
-            <a href="/tribe" class="nav-link">Tribe</a>
-            <a href="https://www.instagram.com/the_official_tiziano" class="nav-link">Contact</a>
+  <main>
+    <section class="container" style="padding-top: 140px; text-align: center;">
+      <div class="section-header reveal">
+        <p>Film Production</p>
+        <h2>Cinematic Storytelling</h2>
+      </div>
+      <div class="reveal reveal-delay-1" style="max-width: 700px; margin: 0 auto 3rem;">
+        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
+          High-end commercial and narrative filmmaking. From concept to final cut, we create visual masterpieces that elevate your brand.
+        </p>
+      </div>
+      <div class="glass-panel reveal reveal-delay-2" style="padding: 60px 40px; max-width: 600px; margin: 0 auto;">
+        <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Start Your Project</h3>
+        <p style="margin-bottom: 2rem; font-size: 0.95rem;">
+          Ready to create something extraordinary? Let's discuss your film project.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="https://www.instagram.com/the_official_tiziano" target="_blank" class="btn">DM on Instagram</a>
+          <a href="mailto:contact@tiziano.com" class="btn btn-outline">Email Us</a>
         </div>
-    </nav>
+      </div>
+    </section>
+  </main>
 
-    <main>
-        <section class="container" style="height: 80vh; display: flex; align-items: center; justify-content: center; padding-top: 80px;">
-            <div style="text-align: center;">
-                <h2>Films</h2>
-                <p style="margin: 0 auto;">Coming Soon...</p>
-            </div>
-        </section>
-    </main>
+  <footer>
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <p class="reveal" style="margin-bottom: 0.5rem; color: #fff; font-family: 'Cinzel', serif; letter-spacing: 0.2em; font-size: 1rem;">TIZIANO</p>
+      <p class="reveal reveal-delay-1">&copy; 2026 Tiziano Media House. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-    <footer>
-        <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <p style="margin-bottom: 0.5rem; color: #fff; font-family: 'Cinzel', serif; letter-spacing: 0.2em; font-size: 1rem;">TIZIANO</p>
-            <p>&copy; 2026 Tiziano Media House. All Rights Reserved.</p>
-        </div>
-    </footer>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const reveals = document.querySelectorAll('.reveal');
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const elementVisible = 100;
+        reveals.forEach(reveal => {
+          const elementTop = reveal.getBoundingClientRect().top;
+          if (elementTop < windowHeight - elementVisible) {
+            reveal.classList.add('active');
+          }
+        });
+      };
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll();
+    });
+  </script>
 </body>
 </html>
