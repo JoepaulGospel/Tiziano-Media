@@ -1,63 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIZIANO | About</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIZIANO | About</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav class="nav">
+    <a href="/" class="logo">TIZIANO</a>
+    <div class="nav-links">
+      <a href="/about" class="nav-link active">About</a>
+      <a href="/portfolio" class="nav-link">Portfolio</a>
+      <a href="/films" class="nav-link">Films</a>
+      <a href="/tribe" class="nav-link">Tribe</a>
+      <a href="https://www.instagram.com/the_official_tiziano" class="nav-link">Contact</a>
+    </div>
+  </nav>
 
-    <nav class="nav">
-        <a href="/" class="logo">TIZIANO</a>
-        <div class="nav-links">
-            <a href="/about" class="nav-link active">About</a>
-            <a href="/portfolio" class="nav-link">Portfolio</a>
-            <a href="/films" class="nav-link">Films</a>
-            <a href="/tribe" class="nav-link">Tribe</a>
-            <a href="https://www.instagram.com/the_official_tiziano" class="nav-link">Contact</a>
+  <main>
+    <section class="container" style="padding-top: 140px;">
+      <div class="section-header reveal">
+        <p>The Tiziano Standard</p>
+        <h2>Unified media infrastructure. Built for precision.</h2>
+      </div>
+      <div class="reveal reveal-delay-1" style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+        <p style="font-size: 1.15rem; line-height: 1.9; margin-bottom: 1.5rem;">
+          Tiziano was founded on a simple premise: great brands deserve seamless creative execution. We exist to eliminate the friction of fragmented production. One roof. One vision. Zero compromise.
+        </p>
+      </div>
+      <div class="reveal reveal-delay-2" style="max-width: 800px; margin: 0 auto 5rem; text-align: center;">
+        <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-secondary);">
+          We don't just capture moments—we engineer them. From cinematic event coverage to full-scale film production, every project is handled with surgical precision and an obsession for quality. No vendor chaos. No creative dilution. Just cohesive storytelling that moves people.
+        </p>
+      </div>
+      <div class="grid reveal reveal-delay-3" style="max-width: 600px; margin: 0 auto;">
+        <div class="cell" style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌍</div>
+          <h3>Global Vision</h3>
         </div>
-    </nav>
-
-    <main>
-        <section class="container" style="padding-top: 140px;">
-            <div class="section-header">
-                <p>The Tiziano Standard</p>
-                <h2>Unified media infrastructure. Built for precision.</h2>
-            </div>
-            
-            <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
-                <p style="font-size: 1.15rem; line-height: 1.9; margin-bottom: 1.5rem;">
-                    Tiziano was founded on a simple premise: great brands deserve seamless creative execution. We exist to eliminate the friction of fragmented production. One roof. One vision. Zero compromise.
-                </p>
-            </div>
-
-            <div style="max-width: 800px; margin: 0 auto 5rem; text-align: center;">
-                <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-secondary);">
-                    We don’t just capture moments—we engineer them. From cinematic event coverage to full-scale film production, every project is handled with surgical precision and an obsession for quality. No vendor chaos. No creative dilution. Just cohesive storytelling that moves people.
-                </p>
-            </div>
-
-            <!-- Updated Metrics Grid -->
-            <div class="grid" style="max-width: 600px; margin: 0 auto;">
-                <div class="cell" style="text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌍</div>
-                    <h3>Global Vision</h3>
-                </div>
-                <div class="cell" style="text-align: center;">
-                    <div style="font-family: 'Cinzel', serif; font-size: 3rem; color: var(--text-secondary); margin-bottom: 1rem; opacity: 0.5;">100%</div>
-                    <h3>Commitment</h3>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <p style="margin-bottom: 0.5rem; color: #fff; font-family: 'Cinzel', serif; letter-spacing: 0.2em; font-size: 1rem;">TIZIANO</p>
-            <p>&copy; 2026 Tiziano Media House. All Rights Reserved.</p>
+        <div class="cell" style="text-align: center;">
+          <div style="font-family: 'Cinzel', serif; font-size: 3rem; color: var(--text-secondary); margin-bottom: 1rem; opacity: 0.5;">100%</div>
+          <h3>Commitment</h3>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <p class="reveal" style="margin-bottom: 0.5rem; color: #fff; font-family: 'Cinzel', serif; letter-spacing: 0.2em; font-size: 1rem;">TIZIANO</p>
+      <p class="reveal reveal-delay-1">&copy; 2026 Tiziano Media House. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const reveals = document.querySelectorAll('.reveal');
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const elementVisible = 100;
+        reveals.forEach(reveal => {
+          const elementTop = reveal.getBoundingClientRect().top;
+          if (elementTop < windowHeight - elementVisible) {
+            reveal.classList.add('active');
+          }
+        });
+      };
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll();
+    });
+  </script>
 </body>
 </html>
