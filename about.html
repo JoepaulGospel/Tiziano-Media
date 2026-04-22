@@ -10,20 +10,26 @@
   <nav class="nav">
     <a href="/" class="logo">TIZIANO</a>
     <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
       <a href="/about" class="nav-link active">About</a>
       <a href="/portfolio" class="nav-link">Portfolio</a>
       <a href="/films" class="nav-link">Films</a>
       <a href="/tribe" class="nav-link">Tribe</a>
-      <a href="https://www.instagram.com/the_official_tiziano" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    <div class="nav-menu" id="navMenu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/about" class="nav-link active">About</a>
+      <a href="/portfolio" class="nav-link">Portfolio</a>
+      <a href="/films" class="nav-link">Films</a>
+      <a href="/tribe" class="nav-link">Tribe</a>
+      <a href="mailto:officialtiziano46@gmail.com" class="nav-link">Contact</a>
     </div>
   </nav>
 
   <main>
-    <section class="container" style="padding-top: 140px;">
-      <div class="section-header reveal">
-        <p>The Tiziano Standard</p>
-        <h2>Unified media infrastructure. Built for precision.</h2>
-      </div>
+    <section class="container" style="padding-top: clamp(80px, 15vw, 140px);">
+      <div class="section-header reveal"><p>Manifesto</p></div>
       <div class="reveal reveal-delay-1" style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
         <p style="font-size: 1.15rem; line-height: 1.9; margin-bottom: 1.5rem;">
           Tiziano was founded on a simple premise: great brands deserve seamless creative execution. We exist to eliminate the friction of fragmented production. One roof. One vision. Zero compromise.
@@ -55,20 +61,14 @@
   </footer>
 
   <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle?.addEventListener('click', () => { navToggle.classList.toggle('active'); navMenu.classList.toggle('active'); });
+    navMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { navToggle.classList.remove('active'); navMenu.classList.remove('active'); }));
     document.addEventListener('DOMContentLoaded', () => {
       const reveals = document.querySelectorAll('.reveal');
-      const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        const elementVisible = 100;
-        reveals.forEach(reveal => {
-          const elementTop = reveal.getBoundingClientRect().top;
-          if (elementTop < windowHeight - elementVisible) {
-            reveal.classList.add('active');
-          }
-        });
-      };
-      window.addEventListener('scroll', revealOnScroll);
-      revealOnScroll();
+      const revealOnScroll = () => { const wh = window.innerHeight; reveals.forEach(r => { if (r.getBoundingClientRect().top < wh - 80) r.classList.add('active'); }); };
+      window.addEventListener('scroll', revealOnScroll); revealOnScroll();
     });
   </script>
 </body>
