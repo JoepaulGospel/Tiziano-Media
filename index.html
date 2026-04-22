@@ -3,18 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TIZIANO | Unified Media Infrastructure</title>
+  <title>TIZIANO | Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav class="nav">
     <a href="/" class="logo">TIZIANO</a>
+    
     <div class="nav-links">
+      <a href="/" class="nav-link active">Home</a>
       <a href="/about" class="nav-link">About</a>
       <a href="/portfolio" class="nav-link">Portfolio</a>
       <a href="/films" class="nav-link">Films</a>
       <a href="/tribe" class="nav-link">Tribe</a>
-      <a href="https://www.instagram.com/the_official_tiziano" class="nav-link">Contact</a>
+    </div>
+    
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+    
+    <div class="nav-menu" id="navMenu">
+      <a href="/" class="nav-link active">Home</a>
+      <a href="/about" class="nav-link">About</a>
+      <a href="/portfolio" class="nav-link">Portfolio</a>
+      <a href="/films" class="nav-link">Films</a>
+      <a href="/tribe" class="nav-link">Tribe</a>
+      <a href="mailto:officialtiziano46@gmail.com" class="nav-link">Contact</a>
     </div>
   </nav>
 
@@ -22,57 +36,65 @@
     <header class="hero">
       <div class="hero-content reveal">
         <h1>TIZIANO</h1>
-        <p>Unified media infrastructure and cinematic production.</p>
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+        <p>Unified Media Infrastructure. Event Coverage. Sourcing. Film Production.</p>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; gap: 8px;">
           <a href="/portfolio" class="btn reveal reveal-delay-1">View Portfolio</a>
-          <a href="https://www.instagram.com/the_official_tiziano" class="btn btn-outline reveal reveal-delay-2">Get in Touch</a>
+          <a href="mailto:officialtiziano46@gmail.com" class="btn btn-outline reveal reveal-delay-2">Get in Touch</a>
         </div>
       </div>
     </header>
 
     <section class="container">
-      <div class="section-header reveal">
-        <p>Core Capabilities</p>
-      </div>
+      <div class="section-header reveal"><p>What We Do</p></div>
       <div class="grid">
         <div class="cell reveal reveal-delay-1">
           <h3>Event Coverage</h3>
-          <p>Cinematic documentation of brand activations, launches, and live experiences. We capture the moment and engineer the edit.</p>
+          <p>Professional cinematic coverage of your brand events, launches, and activations with world-class production quality.</p>
         </div>
         <div class="cell reveal reveal-delay-2">
+          <h3>Sourcing</h3>
+          <p>We provide everything you need—models, crew, cameras, equipment, and talent—all coordinated seamlessly.</p>
+        </div>
+        <div class="cell reveal reveal-delay-3">
           <h3>Film Production</h3>
           <p>High-end commercial and narrative filmmaking. Concept to final cut. Designed to elevate global brand perception.</p>
         </div>
       </div>
-    </section>
-
-    <section class="container" style="text-align: center; padding: 140px 0;">
-      <h2 class="reveal" style="margin-bottom: 1.5rem;">Ready to elevate?</h2>
-      <p class="reveal reveal-delay-1" style="margin: 0 auto 3rem; max-width: 50ch;">Partner with a media infrastructure built for precision.</p>
     </section>
   </main>
 
   <footer>
     <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
       <p class="reveal" style="margin-bottom: 0.5rem; color: #fff; font-family: 'Cinzel', serif; letter-spacing: 0.2em; font-size: 1rem;">TIZIANO</p>
-      <p class="reveal reveal-delay-1">&copy; 2026 Tiziano Media House. All Rights Reserved.</p>
+      <div class="footer-socials reveal reveal-delay-1">
+        <a href="https://www.instagram.com/tizianoproduction" target="_blank" rel="noopener">@tizianoproduction</a>
+      </div>
+      <p class="reveal reveal-delay-2" style="margin-top: 0.5rem;">&copy; 2026 Tiziano Media House. All Rights Reserved.</p>
     </div>
   </footer>
 
   <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle?.addEventListener('click', () => { 
+      navToggle.classList.toggle('active'); 
+      navMenu.classList.toggle('active'); 
+    });
+    navMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => { 
+        navToggle.classList.remove('active'); 
+        navMenu.classList.remove('active'); 
+      });
+    });
     document.addEventListener('DOMContentLoaded', () => {
       const reveals = document.querySelectorAll('.reveal');
-      const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        const elementVisible = 100;
-        reveals.forEach(reveal => {
-          const elementTop = reveal.getBoundingClientRect().top;
-          if (elementTop < windowHeight - elementVisible) {
-            reveal.classList.add('active');
-          }
-        });
+      const revealOnScroll = () => { 
+        const wh = window.innerHeight; 
+        reveals.forEach(r => { 
+          if (r.getBoundingClientRect().top < wh - 80) r.classList.add('active'); 
+        }); 
       };
-      window.addEventListener('scroll', revealOnScroll);
+      window.addEventListener('scroll', revealOnScroll); 
       revealOnScroll();
     });
   </script>
