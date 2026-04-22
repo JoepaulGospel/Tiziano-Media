@@ -10,31 +10,35 @@
   <nav class="nav">
     <a href="/" class="logo">TIZIANO</a>
     <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
       <a href="/about" class="nav-link">About</a>
       <a href="/portfolio" class="nav-link active">Portfolio</a>
       <a href="/films" class="nav-link">Films</a>
       <a href="/tribe" class="nav-link">Tribe</a>
-      <a href="https://www.instagram.com/the_official_tiziano" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    <div class="nav-menu" id="navMenu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/about" class="nav-link">About</a>
+      <a href="/portfolio" class="nav-link active">Portfolio</a>
+      <a href="/films" class="nav-link">Films</a>
+      <a href="/tribe" class="nav-link">Tribe</a>
+      <a href="mailto:officialtiziano46@gmail.com" class="nav-link">Contact</a>
     </div>
   </nav>
 
   <main>
-    <section class="container" style="padding-top: 140px; text-align: center;">
-      <div class="section-header reveal">
-        <p>Our Work</p>
-        <h2>Selected Projects</h2>
-      </div>
+    <section class="container" style="padding-top: clamp(80px, 15vw, 140px); text-align: center;">
+      <div class="section-header reveal"><p>Our Work</p></div>
       <div class="reveal reveal-delay-1" style="max-width: 700px; margin: 0 auto 3rem;">
         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
-          Explore our latest work, behind-the-scenes content, and cinematic showcases on Instagram.
+          Cinematic event coverage, brand storytelling, and visual campaigns delivered with precision. View our latest projects and behind-the-scenes work.
         </p>
       </div>
       <div class="glass-panel reveal reveal-delay-2" style="padding: 60px 40px; max-width: 500px; margin: 0 auto;">
         <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">View Our Portfolio</h3>
-        <p style="margin-bottom: 2rem; font-size: 0.95rem;">
-          Follow us on Instagram to see our latest projects, event coverage, and film work.
-        </p>
-        <a href="https://www.instagram.com/the_official_tiziano" target="_blank" class="btn" style="display: inline-block;">View on Instagram</a>
+        <p style="margin-bottom: 2rem; font-size: 0.95rem;">Follow our official brand account for curated project showcases, reels, and updates.</p>
+        <a href="https://www.instagram.com/tizianoproduction" target="_blank" class="btn" style="display: inline-block;">@tizianoproduction</a>
       </div>
     </section>
   </main>
@@ -42,25 +46,22 @@
   <footer>
     <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
       <p class="reveal" style="margin-bottom: 0.5rem; color: #fff; font-family: 'Cinzel', serif; letter-spacing: 0.2em; font-size: 1rem;">TIZIANO</p>
-      <p class="reveal reveal-delay-1">&copy; 2026 Tiziano Media House. All Rights Reserved.</p>
+      <div class="footer-socials reveal reveal-delay-1">
+        <a href="https://www.instagram.com/tizianoproduction" target="_blank">@tizianoproduction</a>
+      </div>
+      <p class="reveal reveal-delay-2">&copy; 2026 Tiziano Media House. All Rights Reserved.</p>
     </div>
   </footer>
 
   <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle?.addEventListener('click', () => { navToggle.classList.toggle('active'); navMenu.classList.toggle('active'); });
+    navMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { navToggle.classList.remove('active'); navMenu.classList.remove('active'); }));
     document.addEventListener('DOMContentLoaded', () => {
       const reveals = document.querySelectorAll('.reveal');
-      const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        const elementVisible = 100;
-        reveals.forEach(reveal => {
-          const elementTop = reveal.getBoundingClientRect().top;
-          if (elementTop < windowHeight - elementVisible) {
-            reveal.classList.add('active');
-          }
-        });
-      };
-      window.addEventListener('scroll', revealOnScroll);
-      revealOnScroll();
+      const revealOnScroll = () => { const wh = window.innerHeight; reveals.forEach(r => { if (r.getBoundingClientRect().top < wh - 80) r.classList.add('active'); }); };
+      window.addEventListener('scroll', revealOnScroll); revealOnScroll();
     });
   </script>
 </body>
